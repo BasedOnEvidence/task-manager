@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'task-manager-template.herokuapp.com',
+    '127.0.0.1',
 ]
 
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

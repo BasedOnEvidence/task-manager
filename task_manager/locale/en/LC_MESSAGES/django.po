@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-17 12:22+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/index.html:18
+msgid "main_page_title"
+msgstr "Helpdesk"
+
+#: templates/index.html:22
+msgid "company_name"
+msgstr "Test company"
+
+#: templates/index.html:24
+msgid "header_features"
+msgstr "Features"
+
+#: templates/index.html:25
+msgid "header_enterprise"
+msgstr "Enterprise"
+
+#: templates/index.html:26
+msgid "header_support"
+msgstr "Support"
+
+#: templates/index.html:27 templates/index.html:32
+msgid "header_pricing"
+msgstr "Pricing"
+
+#: templates/index.html:29
+msgid "header_sign_up"
+msgstr "Sign up"
+
+#: templates/index.html:33
+msgid "body_offfer"
+msgstr "Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization."
+
+#: views.py:6
+msgid "StatusMsg"
+msgstr ""

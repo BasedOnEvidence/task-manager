@@ -28,9 +28,10 @@
         </nav>
         <a class="btn btn-outline-primary" href="#">{% trans 'header_sign_up' %}</a>
     </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">{% trans 'header_pricing' %}</h1>
-        <p class="lead">{% trans 'body_offfer' %}</p>
+    <div>
+        {% block content %}
+        There is no content yet
+        {% endblock %}
     </div>
 </body>
 </html>

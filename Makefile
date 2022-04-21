@@ -24,3 +24,12 @@ migrate:
 	python3 manage.py migrate
 
 .PHONY: task_manager tests
+
+language:
+	cd task_manager
+	django-admin makemessages -l en
+	django-admin makemessages -l ru
+
+locale:
+	cd task_manager
+	django-admin compilemessages

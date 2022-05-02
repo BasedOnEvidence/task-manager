@@ -19,35 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-
-#: task_manager/templates/task_manager/base.html:18
-msgid "main_page_title"
+#: users/templates/registration/users_list.html:6
+msgid "Users"
 msgstr ""
 
-#: task_manager/templates/task_manager/base.html:22
-msgid "company_name"
+#: users/templates/registration/users_list.html:10
+msgid "ID"
 msgstr ""
 
-#: task_manager/templates/task_manager/base.html:24
-msgid "header_features"
+#: users/templates/registration/users_list.html:11
+msgid "Name"
 msgstr ""
 
-#: task_manager/templates/task_manager/base.html:25
-msgid "header_enterprise"
+#: users/templates/registration/users_list.html:12
+msgid "Email"
 msgstr ""
 
-#: task_manager/templates/task_manager/base.html:26
-msgid "header_support"
-msgstr ""
-
-#: task_manager/templates/task_manager/base.html:27
-msgid "header_pricing"
-msgstr ""
-
-#: task_manager/templates/task_manager/base.html:29
-msgid "header_login"
-msgstr ""
-
-#: task_manager/templates/task_manager/base.html:30
-msgid "header_sign_up"
+#: users/templates/registration/users_list.html:13
+msgid "Creation date"
 msgstr ""

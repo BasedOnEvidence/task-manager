@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 02:19+0300\n"
+"POT-Creation-Date: 2022-05-02 14:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: task_manager/templates/task_manager/index.html:18
+#: task_manager/templates/task_manager/base.html:18
 msgid "main_page_title"
 msgstr "Helpdesk"
 
-#: task_manager/templates/task_manager/index.html:22
+#: task_manager/templates/task_manager/base.html:22
 msgid "company_name"
 msgstr "Test company"
 
-#: task_manager/templates/task_manager/index.html:24
+#: task_manager/templates/task_manager/base.html:24
 msgid "header_features"
 msgstr "Features"
 
-#: task_manager/templates/task_manager/index.html:25
+#: task_manager/templates/task_manager/base.html:25
 msgid "header_enterprise"
 msgstr "Enterprise"
 
-#: task_manager/templates/task_manager/index.html:26
+#: task_manager/templates/task_manager/base.html:26
 msgid "header_support"
 msgstr "Support"
 
-#: task_manager/templates/task_manager/index.html:27
-#: task_manager/templates/task_manager/index.html:32
+#: task_manager/templates/task_manager/base.html:27
 msgid "header_pricing"
 msgstr "Pricing"
 
-#: task_manager/templates/task_manager/index.html:29
+#: task_manager/templates/task_manager/base.html:29
+msgid "header_login"
+msgstr "Login"
+
+#: task_manager/templates/task_manager/base.html:30
 msgid "header_sign_up"
 msgstr "Sign up"
 
-#: task_manager/templates/task_manager/index.html:33
-msgid "body_offfer"
-msgstr ""
-"Quickly build an effective pricing table for your potential customers with "
-"this Bootstrap example. It’s built with default Bootstrap components and "
-"utilities with little customization."
+#~ msgid "body_offfer"
+#~ msgstr ""
+#~ "Quickly build an effective pricing table for your potential customers "
+#~ "with this Bootstrap example. It’s built with default Bootstrap components "
+#~ "and utilities with little customization."

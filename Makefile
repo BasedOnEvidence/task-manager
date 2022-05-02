@@ -21,6 +21,7 @@ gunicorn:
 	poetry run gunicorn task_manager.wsgi
 
 migrate:
+	python3 manage.py makemigrations
 	python3 manage.py migrate
 
 .PHONY: task_manager tests

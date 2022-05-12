@@ -1,14 +1,12 @@
-from django.contrib.auth import authenticate, login, get_user_model
-from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
+from django.views.generic import RedirectView
 
-from users.forms import RegistrationForm
-
-
-User = get_user_model()
+from users.forms import RegistrationForm, AuthenticationForm
+from users.models import User
 
 
 class UsersList(generic.ListView):
@@ -44,3 +42,41 @@ class UserRegisterView(FormView):
             'registration_form': form
         }
         return render(request, self.template_name, context)
+
+
+class UserAuthenticationView(FormView):
+    model = User
+    form_class = AuthenticationForm
+    template_name = 'users/login.html'
+    success_url = reverse_lazy('UsersList')
+
+    def get(self, request):
+        user = request.user
+        if user.is_authenticated:
+            return redirect('home')
+        context = {
+            'login_form': AuthenticationForm()
+        }
+        return render(request, self.template_name, context)
+
+    def post(self, request):
+        form = AuthenticationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect('home')
+        context = {
+            'login_form': form
+        }
+        return render(request, self.template_name, context)
+
+
+class UserLogoutView(RedirectView):
+    url = reverse_lazy('home')
+
+    def get(self, request):
+        logout(request)
+        return redirect('home')

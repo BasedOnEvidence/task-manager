@@ -1,11 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.views.generic import RedirectView
+from django.conf import settings
 
-from users.forms import RegistrationForm, AuthenticationForm
+from users.forms import RegistrationForm, AuthenticationForm, UserAccountForm
 from users.models import User
 
 
@@ -80,3 +82,41 @@ class UserLogoutView(RedirectView):
     def get(self, request):
         logout(request)
         return redirect('home')
+
+
+class UserAccountView(FormView):
+    model = User
+    form_class = UserAccountForm
+    template_name = 'users/account.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+        user_id = kwargs.get('user_id')
+        try:
+            account = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return HttpResponse('Dosvidos')
+        if account:
+            context['id'] = account.id
+            context['username'] = account.username
+            context['email'] = account.email
+            context['hide_email'] = account.hide_email
+
+            is_self = True
+            user = request.user
+            if user.is_authenticated and user != account:
+                is_self = False
+            if not user.is_authenticated:
+                is_self = False
+
+            context['is_self'] = is_self
+            context['BASE_URL'] = settings.BASE_URL
+
+            return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        pass
+
+
+class UserDeleteView(FormView):
+    template_name = 'users/account.html'

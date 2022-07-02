@@ -1,3 +1,5 @@
+CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
+
 install:
 	poetry install
 	export DJANGO_SETTINGS_MODULE=hello_django.settings
@@ -34,3 +36,8 @@ language:
 locale:
 	cd task_manager
 	django-admin compilemessages
+
+push:
+	git add .
+	git commit -m "$(commit)"
+	git push --set-upstream origin $(CURRENT_BRANCH)

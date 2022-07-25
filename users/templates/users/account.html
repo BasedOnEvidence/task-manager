@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label class="profile-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="Username"
-                                value="{{ username }}" disabled="disabled" required="true">
+                                value="{{ username }}" required="true">
                         </div>
                         <div class="form-group">
                             <label class="profile-label">Email</label>
@@ -69,8 +69,37 @@
                             {% endif %}
                             {% if is_self %}
                         </div>
+                        {% if is_self %}
+                        <div class="form-group">
+                            <label class="profile-label">New password</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                value="{{ password }}" placeholder="New password" autocomplete="off">
+
+                        </div>
+                        <div class="mt-4 checkbox">
+                            <label>
+                                <input type="checkbox" name="hide_email" id="hide_email" {% if hide_email %}checked{%endif%}>
+                                Hide Email
+                            </label>
+
+                        </div>
+                        {% endif %}
+
+                        {% for field in form %}
+                        <p>
+                            {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                        </p>
+                        {% endfor %}
+                        {% if form.non_field_errors %}
+                        <div style="color: red">
+                            <p>{{form.non_field_errors}}</p>
+                        </div>
+                        {% endif %}
+
                         <br>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary" href="{% url 'users:update' user_id=request.user.id%}">Update</button>
                         <div class="d-flex flex-column mt-4">
                             <a class="m-auto" href="{% url 'users:delete' user_id=request.user.id%}">Delete account</a>
                         </div>

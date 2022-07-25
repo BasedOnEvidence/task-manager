@@ -95,7 +95,7 @@ class UserAccountView(FormView):
         try:
             account = User.objects.get(id=user_id)
         except User.DoesNotExist:
-            return HttpResponse('Dosvidos')
+            return HttpResponse('User does not exist')
         if account:
             context['id'] = account.id
             context['username'] = account.username
@@ -115,8 +115,46 @@ class UserAccountView(FormView):
             return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        pass
-
+        user = request.user
+        if not user.is_authenticated:
+            return redirect('login')
+        else:
+            is_self = True
+        user_id = kwargs.get('user_id')
+        try:
+            account = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return HttpResponse('User does not exist')
+        if user.id != request.user.id:
+            return HttpResponse('You have no permissions to edit this profile')
+        context = {}
+        if request.POST:
+            form = UserAccountForm(request.POST, instance=request.user)
+            print(form)
+            if form.is_valid():
+                form.save()
+                return redirect('users:update', user_id=user.id)
+            else:
+                form = UserAccountForm(
+                    request.POST,
+                    instance=request.user,
+                )
+                context['id'] = user.id
+                context['email'] = user.email
+                context['username'] = user.username
+                context['hide_email'] = user.hide_email
+                context['form'] = form
+                context['is_self'] = is_self
+        return render(request, self.template_name, context)
 
 class UserDeleteView(FormView):
-    template_name = 'users/account.html'
+    template_name = 'users/delete.html'
+    model = User
+
+    def get(self, request, *args, **kwargs):
+        user_id = kwargs.get('user_id')
+        try:
+            User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return HttpResponse('User does not exist')
+        return render(request, self.template_name)

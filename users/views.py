@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import FormView, DeleteView, UpdateView
 from django.views.generic import RedirectView
 from django.conf import settings
@@ -89,6 +89,9 @@ class UserAccountView(UpdateView):
     template_name = 'users/account.html'
     model = User
     form_class = UserAccountForm
+
+    def get_success_url(self):
+        return reverse('home')
 
 
 class UserDeleteView(DeleteView):

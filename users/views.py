@@ -1,12 +1,9 @@
-from urllib import request
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import FormView, DeleteView, UpdateView
 from django.views.generic import RedirectView
-from django.conf import settings
 
 from users.forms import RegistrationForm, AuthenticationForm, UserAccountForm
 from users.models import User

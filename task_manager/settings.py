@@ -67,7 +67,7 @@ ROOT_URLCONF = 'task_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,11 +124,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = (
-    # "locale",
-    os.path.join(BASE_DIR, 'locale'),
-    os.path.join(BASE_DIR, '../users/locale'),
-)
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 
 LANGUAGE_CODE = 'en-us'
 

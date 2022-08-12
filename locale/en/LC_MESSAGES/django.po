@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-13 02:03+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: tasks/templates/tasks/statuses_create.html:8
+#: tasks/templates/tasks/statuses_list.html:7 templates/statuses/create.html:8
+#: templates/statuses/list.html:7
+msgid "Create status"
+msgstr "Create status"
+
+#: tasks/templates/tasks/statuses_list.html:6 templates/statuses/list.html:6
+msgid "Statuses"
+msgstr "Statuses"
+
+#: tasks/templates/tasks/statuses_list.html:11 templates/statuses/list.html:11
+#: templates/users/list.html:10
+msgid "ID"
+msgstr "ID"
+
+#: tasks/templates/tasks/statuses_list.html:12 templates/statuses/list.html:12
+#: templates/users/list.html:11
+msgid "Name"
+msgstr "Name"
+
+#: templates/base.html:26
+msgid "main_page_title"
+msgstr "Django task manager"
+
+#: templates/base.html:31
+msgid "company_name"
+msgstr "Hexlet"
+
+#: templates/base.html:34
+msgid "header_features"
+msgstr "Features"
+
+#: templates/base.html:35
+msgid "header_enterprise"
+msgstr "Enterprise"
+
+#: templates/base.html:36
+msgid "header_support"
+msgstr "Support"
+
+#: templates/base.html:37
+msgid "statuses"
+msgstr "Statuses"
+
+#: templates/base.html:39
+msgid "header_admin"
+msgstr "Admin panel"
+
+#: templates/base.html:41
+msgid "header_profile"
+msgstr "Profile"
+
+#: templates/base.html:45
+msgid "header_logout"
+msgstr "Logout"
+
+#: templates/base.html:47
+msgid "header_login"
+msgstr "Login"
+
+#: templates/base.html:48
+msgid "header_register"
+msgstr "Register"
+
+#: templates/users/list.html:6
+msgid "Users"
+msgstr "Users"
+
+#: templates/users/list.html:12
+msgid "Email"
+msgstr "Email"
+
+#: templates/users/list.html:13
+msgid "Creation date"
+msgstr "Creation date"
+
+#: templates/users/list.html:14
+msgid "Last login"
+msgstr "Last login"

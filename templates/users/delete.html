@@ -1,4 +1,4 @@
-{% extends 'task_manager/base.html' %}
+{% extends 'base.html' %}
 {% load i18n %}
 
 {% block title %}Register{% endblock %}
@@ -24,6 +24,27 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
+
+    .cancel a:link {
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .cancel a:visited {
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .cancel a:hover {
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .cancel a:active {
+        color: #0000EE;
+        background-color: transparent;
+        text-decoration: none;
+    }
 </style>
 
 <div class="container-fluid">
@@ -31,11 +52,8 @@
         <div class="card card-signin">
             <div class="card-body">
                 <form class="form-signin" method="post">{% csrf_token %}
-                    <input type="username" name="username" id="inputUsername" class="form-control"
-                        placeholder="Username" required autofocus>
-                    <input type="password" name="password" id="inputPassword" class="form-control"
-                        placeholder="Password" required>
-
+                    <h2 align="center">Remove account?</h2>
+                    <br>
                     {% for field in login_form %}
                     <p>
                         {% for error in field.errors %}
@@ -47,15 +65,11 @@
                     <div style="color: red">
                         <p>{{login_form.non_field_errors}}</p>
                     </div>
-
                     {% endif %}
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" href="{% url 'home'%}">Submit</button>
+                    <div class="cancel btn btn-lg btn-block"><a href="{% url 'update_user' pk=request.user.id%}">Cancel</a></div>
                 </form>
-
-                <div class="d-flex flex-column my-4">
-                    <a class="m-auto" href="#">Reset password</a>
-                </div>
             </div>
         </div>
     </div>

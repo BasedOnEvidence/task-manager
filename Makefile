@@ -29,15 +29,14 @@ migrate:
 .PHONY: task_manager tests
 
 language:
-	cd task_manager
 	django-admin makemessages -l en
 	django-admin makemessages -l ru
 
 locale:
-	cd task_manager
 	django-admin compilemessages
 
 push:
+	heroku run make migrate --app task-manager-template
 	git add .
 	git commit -m "$(commit)"
 	git push --set-upstream origin $(CURRENT_BRANCH)

@@ -52,7 +52,7 @@ class UserAccountForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'hide_email')
+        fields = ('username', 'email')
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -75,7 +75,6 @@ class UserAccountForm(forms.ModelForm):
         account.username = self.cleaned_data['username']
         account.email = self.cleaned_data['email']
         # account.password = self.cleaned_data['password']
-        account.hide_email = self.cleaned_data['hide_email']
         if commit:
             account.save()
         return account

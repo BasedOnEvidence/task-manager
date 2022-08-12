@@ -149,4 +149,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 BASE_URL = 'http://127.0.0.1:8000'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 django_heroku.settings(locals())

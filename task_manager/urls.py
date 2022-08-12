@@ -16,12 +16,20 @@ Including another URLconf
 
 from django.contrib import admin
 from users import views as user_view
-from django.urls import include, path
+from statuses import views as status_view
+from django.urls import path
 
 urlpatterns = [
     path('', user_view.UsersList.as_view(), name='home'),
-    path('login/', user_view.UserAuthenticationView.as_view(), name='login'),
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls', namespace='users')),
-    path('statuses/', include('tasks.urls', namespace='statuses')),
+    path('users/', user_view.UsersList.as_view(), name='users'),
+    path('login/', user_view.UserAuthenticationView.as_view(), name='login'),
+    path('users/logout/', user_view.UserLogoutView.as_view(), name='logout'),
+    path('users/create/', user_view.UserRegisterView.as_view(), name='create_user'),
+    path('users/<int:pk>/update/', user_view.UserAccountView.as_view(), name='update_user'),
+    path('users/<int:pk>/delete/', user_view.UserDeleteView.as_view(), name='delete_user'),
+    path('statuses/', status_view.StatusesListView.as_view(), name='statuses'),
+    path('statuses/create/', status_view.StatusCreateView.as_view(), name='create_status'),
+    path('statuses/<int:pk>/update/', status_view.StatusChangeView.as_view(), name='update_status'),
+    path('statuses/<int:pk>/delete/', status_view.StatusDeleteView.as_view(), name='delete_status'),
 ]

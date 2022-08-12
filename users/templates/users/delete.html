@@ -68,7 +68,7 @@
                     {% endif %}
 
                     <button class="btn btn-lg btn-primary btn-block" type="submit" href="{% url 'home'%}">Submit</button>
-                    <div class="cancel btn btn-lg btn-block"><a href="{% url 'users:update' pk=request.user.id%}">Cancel</a></div>
+                    <div class="cancel btn btn-lg btn-block"><a href="{% url 'update_user' pk=request.user.id%}">Cancel</a></div>
                 </form>
             </div>
         </div>

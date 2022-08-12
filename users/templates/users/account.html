@@ -92,9 +92,9 @@
                         {% endif %}
 
                         <br>
-                        <button type="submit" class="btn btn-primary" href="{% url 'users:update' pk=request.user.id%}">Update</button>
+                        <button type="submit" class="btn btn-primary" href="{% url 'update_user' pk=request.user.id%}">Update</button>
                         <div class="d-flex flex-column mt-4">
-                            <a class="m-auto" href="{% url 'users:delete' pk=request.user.id%}">Delete account</a>
+                            <a class="m-auto" href="{% url 'delete_user' pk=request.user.id%}">Delete account</a>
                         </div>
                         {% endif %}
                     </form>

@@ -36,7 +36,7 @@ locale:
 	django-admin compilemessages
 
 push:
-	heroku run make migrate --app task-manager-template
 	git add .
 	git commit -m "$(commit)"
 	git push --set-upstream origin $(CURRENT_BRANCH)
+	heroku run make migrate --app task-manager-template

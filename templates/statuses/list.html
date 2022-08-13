@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 {% load i18n %}
 
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-3">{% trans 'Statuses' %}</h1>
-    <a href="{% url 'create_status' %}">{% translate 'Create status' %}</a>
+    <p><a href="{% url 'create_status' %}">{% translate 'Create status' %}</a></p>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">{% trans 'ID' %}</th>
                 <th scope="col">{% trans 'Name' %}</th>
+                <th scope="col">{% trans 'Creation date' %}</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +20,11 @@
             <tr>
                 <th scope="row">{{ status.id }}</th>
                 <td>{{ status.name }}</td>
+                <td>{{ status.creation_date }}</td>
+                <td>
+                    <a href="{% url 'update_status' pk=status.id%}">{% translate 'Change' %}</a><br>
+                    <a href="{% url 'delete_status' pk=status.id%}">{% translate 'Delete' %}</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

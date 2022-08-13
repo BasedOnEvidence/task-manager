@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-13 02:03+0300\n"
+"POT-Creation-Date: 2022-08-13 13:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +20,6 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: tasks/templates/tasks/statuses_create.html:8
-#: tasks/templates/tasks/statuses_list.html:7 templates/statuses/create.html:8
-#: templates/statuses/list.html:7
-msgid "Create status"
-msgstr ""
-
-#: tasks/templates/tasks/statuses_list.html:6 templates/statuses/list.html:6
-msgid "Statuses"
-msgstr ""
-
-#: tasks/templates/tasks/statuses_list.html:11 templates/statuses/list.html:11
-#: templates/users/list.html:10
-msgid "ID"
-msgstr ""
-
-#: tasks/templates/tasks/statuses_list.html:12 templates/statuses/list.html:12
-#: templates/users/list.html:11
-msgid "Name"
-msgstr ""
-
 #: templates/base.html:26
 msgid "main_page_title"
 msgstr ""
@@ -49,39 +29,78 @@ msgid "company_name"
 msgstr ""
 
 #: templates/base.html:34
-msgid "header_features"
+msgid "header_users"
 msgstr ""
 
 #: templates/base.html:35
-msgid "header_enterprise"
+msgid "header_labels"
 msgstr ""
 
 #: templates/base.html:36
-msgid "header_support"
+msgid "header_tasks"
 msgstr ""
 
 #: templates/base.html:37
-msgid "statuses"
+msgid "header_statuses"
 msgstr ""
 
-#: templates/base.html:39
-msgid "header_admin"
-msgstr ""
-
-#: templates/base.html:41
+#: templates/base.html:38
 msgid "header_profile"
 msgstr ""
 
-#: templates/base.html:45
+#: templates/base.html:42
 msgid "header_logout"
 msgstr ""
 
-#: templates/base.html:47
+#: templates/base.html:44
 msgid "header_login"
 msgstr ""
 
-#: templates/base.html:48
+#: templates/base.html:45
 msgid "header_register"
+msgstr ""
+
+#: templates/statuses/create.html:8 templates/statuses/list.html:7
+msgid "Create status"
+msgstr ""
+
+#: templates/statuses/list.html:6
+msgid "Statuses"
+msgstr ""
+
+#: templates/statuses/list.html:11 templates/tasks/list.html:11
+#: templates/users/list.html:10
+msgid "ID"
+msgstr ""
+
+#: templates/statuses/list.html:12 templates/tasks/list.html:12
+#: templates/users/list.html:11
+msgid "Name"
+msgstr ""
+
+#: templates/statuses/list.html:13 templates/tasks/list.html:16
+#: templates/users/list.html:13
+msgid "Creation date"
+msgstr ""
+
+#: templates/tasks/create.html:8 templates/tasks/list.html:7
+msgid "Create task"
+msgstr ""
+
+#: templates/tasks/list.html:6
+msgid "Tasks"
+msgstr ""
+
+#: templates/tasks/list.html:13
+msgid "Status"
+msgstr ""
+
+#: templates/tasks/list.html:14
+msgid "Author"
+msgstr ""
+
+#: templates/tasks/list.html:15
+msgid "Performer"
 msgstr ""
 
 #: templates/users/list.html:6
@@ -90,10 +109,6 @@ msgstr ""
 
 #: templates/users/list.html:12
 msgid "Email"
-msgstr ""
-
-#: templates/users/list.html:13
-msgid "Creation date"
 msgstr ""
 
 #: templates/users/list.html:14

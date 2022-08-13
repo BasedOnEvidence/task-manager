@@ -28,16 +28,13 @@
 
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">{% trans 'company_name' %}</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="/admin/">{% trans 'company_name' %}</a></h5>
         <nav class="my-2 my-md-0 mr-md-3">
             {% if user.is_authenticated %}
-            <a class="p-2 text-dark" href="#">{% trans 'header_features' %}</a>
-            <a class="p-2 text-dark" href="#">{% trans 'header_enterprise' %}</a>
-            <a class="p-2 text-dark" href="#">{% trans 'header_support' %}</a>
-            <a class="p-2 text-dark" href="{% url 'statuses' %}">{% trans 'statuses' %}</a>
-            {% endif %}
-            <a class="p-2 text-dark" href="/admin/">{% trans 'header_admin' %}</a>
-            {% if user.is_authenticated %}
+            <a class="p-2 text-dark" href="{% url 'users' %}">{% trans 'header_users' %}</a>
+            <a class="p-2 text-dark" href="#">{% trans 'header_labels' %}</a>
+            <a class="p-2 text-dark" href="{% url 'tasks' %}">{% trans 'header_tasks' %}</a>
+            <a class="p-2 text-dark" href="{% url 'statuses' %}">{% trans 'header_statuses' %}</a>
             <a class="p-2 text-dark" href="{% url 'update_user' pk=request.user.id%}">{% trans 'header_profile'%}: {{ user }}</a>
             {% endif %}
         </nav>
@@ -49,6 +46,7 @@
         {% endif %}
     </div>
     <div class="container">
+        {% bootstrap_messages %}
         {% block content %}
         {% endblock %}
     </div>

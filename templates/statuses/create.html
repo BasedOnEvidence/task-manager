@@ -4,11 +4,17 @@
 
 
 {% block content %}
-<div class="container">
-  <h1>{% trans 'Create status' %}</h1>
-  <form method="post">{% csrf_token %}
-    {{ form }}
-    <button class="btn-primary" type="submit">Create</button>
-  </form>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card card-signin">
+            <div class="card-body">
+                <h1 align="center">{% trans 'Create status' %}</h1>
+                <form method="post">{% csrf_token %}
+                    {% bootstrap_form form %}
+                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Create' %}</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-3">{% trans 'Tasks' %}</h1>
+    <p><a href="{% url 'create_task' %}">{% translate 'Create task' %}</a></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">{% trans 'ID' %}</th>
+                <th scope="col">{% trans 'Name' %}</th>
+                <th scope="col">{% trans 'Status' %}</th>
+                <th scope="col">{% trans 'Author' %}</th>
+                <th scope="col">{% trans 'Performer' %}</th>
+                <th scope="col">{% trans 'Creation date' %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <th scope="row">{{ task.id }}</th>
+                <td>{{ task.name }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.author }}</td>
+                <td>{{ task.performer }}</td>
+                <td>{{ task.creation_date}}</td>
+                <td>
+                    <a href="{% url 'update_task' pk=task.id%}">{% translate 'Change' %}</a><br>
+                    <a href="{% url 'delete_task' pk=task.id%}">{% translate 'Delete' %}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

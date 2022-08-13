@@ -18,8 +18,9 @@ from django.contrib import admin
 
 from task_manager import views as view
 from users import views as user_view
-from statuses import views as status_view
+from statuses import views as statuses_view
 from tasks import views as tasks_view
+from labels import views as labels_view
 from django.urls import path
 
 urlpatterns = [
@@ -31,13 +32,17 @@ urlpatterns = [
     path('users/create/', user_view.UserRegisterView.as_view(), name='create_user'),
     path('users/<int:pk>/update/', user_view.UserAccountView.as_view(), name='update_user'),
     path('users/<int:pk>/delete/', user_view.UserDeleteView.as_view(), name='delete_user'),
-    path('statuses/', status_view.StatusesListView.as_view(), name='statuses'),
-    path('statuses/create/', status_view.StatusCreateView.as_view(), name='create_status'),
-    path('statuses/<int:pk>/update/', status_view.StatusUpdateView.as_view(), name='update_status'),
-    path('statuses/<int:pk>/delete/', status_view.StatusDeleteView.as_view(), name='delete_status'),
+    path('statuses/', statuses_view.StatusesListView.as_view(), name='statuses'),
+    path('statuses/create/', statuses_view.StatusCreateView.as_view(), name='create_status'),
+    path('statuses/<int:pk>/update/', statuses_view.StatusUpdateView.as_view(), name='update_status'),
+    path('statuses/<int:pk>/delete/', statuses_view.StatusDeleteView.as_view(), name='delete_status'),
     path('tasks/', tasks_view.TasksListView.as_view(), name='tasks'),
     path('tasks/create/', tasks_view.TaskCreateView.as_view(), name='create_task'),
     path('tasks/<int:pk>/update/', tasks_view.TaskChangeView.as_view(), name='update_task'),
     path('tasks/<int:pk>/delete/', tasks_view.TaskDeleteView.as_view(), name='delete_task'),
     path('tasks/<int:pk>/', tasks_view.TaskView.as_view(), name='view_task'),
+    path('labels/', labels_view.LabelsListView.as_view(), name='labels'),
+    path('labels/create/', labels_view.LabelCreateView.as_view(), name='create_label'),
+    path('labels/<int:pk>/update/', labels_view.LabelUpdateView.as_view(), name='update_label'),
+    path('labels/<int:pk>/delete/', labels_view.LabelDeleteView.as_view(), name='delete_label')
 ]

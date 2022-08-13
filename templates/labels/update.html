@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card card-signin">
+            <div class="card-body">
+                <h1 align="center">{% trans 'Change label' %}</h1>
+                <form method="post">{% csrf_token %}
+                    {% bootstrap_form form %}
+                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Change' %}</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

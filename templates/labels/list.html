@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-3">{% trans 'Labels' %}</h1>
+    <p><a href="{% url 'create_label' %}">{% translate 'Create label' %}</a></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">{% trans 'ID' %}</th>
+                <th scope="col">{% trans 'Name' %}</th>
+                <th scope="col">{% trans 'Creation date' %}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for label in labels %}
+            <tr>
+                <th scope="row">{{ label.id }}</th>
+                <td>{{ label.name }}</td>
+                <td>{{ label.creation_date }}</td>
+                <td>
+                    <a href="{% url 'update_label' pk=label.id%}">{% translate 'Change' %}</a><br>
+                    <a href="{% url 'delete_label' pk=label.id%}">{% translate 'Delete' %}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

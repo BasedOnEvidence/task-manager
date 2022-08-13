@@ -20,14 +20,16 @@ class StatusCreateView(SuccessMessageMixin, CreateView):
     success_message = 'Status successfully created'
 
 
-class StatusUpdateView(UpdateView):
+class StatusUpdateView(SuccessMessageMixin, UpdateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/update.html'
     success_url = reverse_lazy('statuses')
+    success_message = 'Status successfully updated'
 
 
-class StatusDeleteView(DeleteView):
+class StatusDeleteView(SuccessMessageMixin, DeleteView):
     model = Status
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')
+    success_message = 'Status successfully deleted'

@@ -39,4 +39,5 @@ push:
 	git add .
 	git commit -m "$(commit)"
 	git push --set-upstream origin $(CURRENT_BRANCH)
+	git push heroku main:main
 	heroku run make migrate --app task-manager-template

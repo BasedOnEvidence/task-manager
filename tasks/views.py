@@ -25,7 +25,7 @@ class TaskCreateView(SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskChangeView(SuccessMessageMixin, UpdateView):
+class TaskUpdateView(SuccessMessageMixin, UpdateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/update.html'

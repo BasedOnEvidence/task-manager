@@ -21,14 +21,14 @@
             {% for task in tasks %}
             <tr>
                 <th scope="row">{{ task.id }}</th>
-                <td>{{ task.name }}</td>
+                <td><a href="{% url 'view_task' pk=task.id%}">{{ task.name }}</a></td>
                 <td>{{ task.status }}</td>
                 <td>{{ task.author }}</td>
                 <td>{{ task.performer }}</td>
                 <td>{{ task.creation_date}}</td>
                 <td>
-                    <a href="{% url 'update_task' pk=task.id%}">{% translate 'Change' %}</a><br>
-                    <a href="{% url 'delete_task' pk=task.id%}">{% translate 'Delete' %}</a>
+                    <a href="{% url 'update_task' pk=task.id%}">{% trans 'Change' %}</a><br>
+                    <a href="{% url 'delete_task' pk=task.id%}">{% trans 'Delete' %}</a>
                 </td>
             </tr>
             {% endfor %}

@@ -1,3 +1,4 @@
+include task_manager/.env
 CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 install:
@@ -39,5 +40,7 @@ push:
 	git add .
 	git commit -m "$(commit)"
 	git push --set-upstream origin $(CURRENT_BRANCH)
+	heroku config:set SECRET_KEY=$(SECRET_KEY) --app task-manager-template
+	heroku config:set DEBUG=$(DEBUG) --app task-manager-template
 	git push heroku main:main
 	heroku run make migrate --app task-manager-template

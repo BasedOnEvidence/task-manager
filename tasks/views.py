@@ -1,16 +1,19 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, UpdateView, DetailView, ListView
+from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
 
-from tasks.forms import TaskForm
+from django_filters.views import FilterView
+
+from tasks.forms import TaskForm, TasksFilter
 from tasks.models import Task
 from users.models import User
 
 
-class TasksListView(ListView):
+class TasksListView(FilterView):
     model = Task
     template_name = 'tasks/list.html'
     context_object_name = 'tasks'
+    filterset_class = TasksFilter
 
 
 class TaskCreateView(SuccessMessageMixin, CreateView):

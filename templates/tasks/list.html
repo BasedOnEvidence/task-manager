@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load bootstrap4 %}
 
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-3">{% trans 'Tasks' %}</h1>
     <p><a href="{% url 'create_task' %}">{% translate 'Create task' %}</a></p>
+    <div class="card mb-3">
+        <div class="card-body bg-light">
+            <form method="get">
+                {% bootstrap_form filter.form %}
+                <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Filter' %}</button></div>
+            </form>
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>

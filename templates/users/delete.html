@@ -1,78 +1,23 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load bootstrap4 %}
 
-{% block title %}Register{% endblock %}
+
+
 {% block content %}
-
-
-<style type="text/css">
-    .card-signin {
-        width: 100%;
-        max-width: 400px;
-        padding: 15px;
-        margin: auto;
-    }
-
-    .form-signin input[type="username"] {
-        margin-bottom: 10px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-
-    .form-signin input[type="password"] {
-        margin-bottom: -1px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    .cancel a:link {
-        background-color: transparent;
-        text-decoration: none;
-    }
-
-    .cancel a:visited {
-        background-color: transparent;
-        text-decoration: none;
-    }
-
-    .cancel a:hover {
-        background-color: transparent;
-        text-decoration: none;
-    }
-
-    .cancel a:active {
-        color: #0000EE;
-        background-color: transparent;
-        text-decoration: none;
-    }
-</style>
-
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="card card-signin">
             <div class="card-body">
-                <form class="form-signin" method="post">{% csrf_token %}
-                    <h2 align="center">Remove account?</h2>
-                    <br>
-                    {% for field in login_form %}
-                    <p>
-                        {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                    {% endfor %}
-                    </p>
-                    {% endfor %}
-                    {% if login_form.non_field_errors %}
-                    <div style="color: red">
-                        <p>{{login_form.non_field_errors}}</p>
-                    </div>
-                    {% endif %}
-
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" href="{% url 'home'%}">Submit</button>
-                    <div class="cancel btn btn-lg btn-block"><a href="{% url 'update_user' pk=request.user.id%}">Cancel</a></div>
+                <h1 align="center">{% trans 'Delete user' %}</h1>
+                <p>{% trans 'Are you sure you want to delete the user:' %} {{ user }}?</p>
+                <form method="post">{% csrf_token %}
+                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Delete' %}</button></div>
                 </form>
+                <br>
+                <div align="center"><a href="{% url 'home' %}">{% trans 'Cancel' %}</a></div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
@@ -33,3 +34,7 @@ class LabelDeleteView(SuccessMessageMixin, DeleteView):
     template_name = 'labels/delete.html'
     success_url = reverse_lazy('labels')
     success_message = 'Label successfully deleted'
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)

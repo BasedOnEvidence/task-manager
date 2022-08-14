@@ -6,12 +6,13 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="card">
+        <div class="card card-signin">
             <div class="card-body">
-                <h1 align="center">{% trans 'Registration' %}</h1>
+                <h1 align="center">{% trans 'Change user' %}</h1>
                 <form method="post">{% csrf_token %}
                     {% bootstrap_form form %}
-                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Register' %}</button></div>
+                    <p align="center"><a href="{% url 'delete_user' pk=request.user.id%}">{% trans 'Delete account' %}</a></p>
+                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Update' %}</button></div>
                 </form>
             </div>
         </div>

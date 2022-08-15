@@ -1,0 +1,26 @@
+[
+{
+    "model": "labels.label",
+    "pk": 1,
+    "fields": {
+        "name": "Internal",
+        "creation_date": "2022-08-13T20:43:55.011Z"
+    }
+},
+{
+    "model": "labels.label",
+    "pk": 2,
+    "fields": {
+        "name": "Telegram",
+        "creation_date": "2022-08-13T20:56:15.573Z"
+    }
+},
+{
+    "model": "labels.label",
+    "pk": 3,
+    "fields": {
+        "name": "Duty",
+        "creation_date": "2022-08-13T20:56:20.438Z"
+    }
+}
+]

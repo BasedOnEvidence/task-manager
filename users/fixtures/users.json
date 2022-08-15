@@ -1,0 +1,56 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$9rNQqNMhk8T4nZz9GL0bRO$+NWjMIjhs6qJrNHEdQY6k8XO0hEej1dmaHVmaZ8N8A8=",
+        "last_login": "2022-08-15T07:52:44.480Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Alexandr",
+        "last_name": "Kravtsov",
+        "email": "admin@hexlet.io",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-08-13T10:45:10.064Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$Qyh6vIlJqNHYOlrNqxJbZ6$9CI8HRxC1SbqoKd8z4Rz2g2XjkPras41VVjxGZSLFTM=",
+        "last_login": "2022-08-15T06:50:12.159Z",
+        "is_superuser": false,
+        "username": "test",
+        "first_name": "123",
+        "last_name": "123",
+        "email": "test@test.ru",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-08-13T10:45:23.349Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$ne5gxOoNG8huS5YOWS67VI$qBor7+DH/g/Nj2ZpChiGIUo82acowIhWSOVbmIUFHtU=",
+        "last_login": "2022-08-15T07:27:23.560Z",
+        "is_superuser": false,
+        "username": "permission",
+        "first_name": "permission",
+        "last_name": "permission",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-08-15T07:27:13.079Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

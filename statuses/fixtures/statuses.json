@@ -1,0 +1,34 @@
+[
+{
+    "model": "statuses.status",
+    "pk": 1,
+    "fields": {
+        "name": "New",
+        "creation_date": "2022-08-13T10:45:44.309Z"
+    }
+},
+{
+    "model": "statuses.status",
+    "pk": 2,
+    "fields": {
+        "name": "In progress",
+        "creation_date": "2022-08-13T10:45:50.292Z"
+    }
+},
+{
+    "model": "statuses.status",
+    "pk": 3,
+    "fields": {
+        "name": "Closed",
+        "creation_date": "2022-08-13T10:45:55.277Z"
+    }
+},
+{
+    "model": "statuses.status",
+    "pk": 6,
+    "fields": {
+        "name": "Canceled",
+        "creation_date": "2022-08-13T11:34:36.725Z"
+    }
+}
+]

@@ -1,4 +1,5 @@
 include task_manager/.env
+
 CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 install:

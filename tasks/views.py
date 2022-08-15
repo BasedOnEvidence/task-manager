@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
@@ -42,10 +41,6 @@ class TaskDeleteView(SuccessMessageMixin, DeleteView):
     template_name = 'tasks/delete.html'
     success_url = reverse_lazy('tasks')
     success_message = 'Task successfully deleted'
-
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
 
 
 class TaskView(DetailView):

@@ -13,6 +13,7 @@
                 <th scope="col">{% trans 'Email' %}</th>
                 <th scope="col">{% trans 'Creation date' %}</th>
                 <th scope="col">{% trans 'Last login' %}</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,10 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.date_joined }}</td>
                 <td>{{ user.last_login }}</td>
+                <td>
+                    <a href="{% url 'update_user' pk=user.id%}">{% trans 'Change' %}</a><br>
+                    <a href="{% url 'delete_user' pk=user.id%}">{% trans 'Delete' %}</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

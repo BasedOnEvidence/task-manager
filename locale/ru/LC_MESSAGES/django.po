@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 23:17+0300\n"
+"POT-Creation-Date: 2022-08-21 23:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,68 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: labels/views.py:22
+#, fuzzy
+#| msgid "You have successfully updated profile"
+msgid "Label successfully created"
+msgstr "Метка создана"
+
+#: labels/views.py:30
+#, fuzzy
+#| msgid "You have successfully updated profile"
+msgid "Label successfully updated"
+msgstr "Метка обновлена"
+
+#: labels/views.py:37
+#, fuzzy
+#| msgid "You have successfully logged in"
+msgid "Label successfully deleted"
+msgstr "Метка удалена"
+
+#: statuses/views.py:22
+msgid "Status successfully created"
+msgstr "Статус создан"
+
+#: statuses/views.py:30
+#, fuzzy
+#| msgid "You have successfully updated profile"
+msgid "Status successfully updated"
+msgstr "Статус обновлен"
+
+#: statuses/views.py:37
+#, fuzzy
+#| msgid "You have successfully logged in"
+msgid "Status successfully deleted"
+msgstr "Статус удален"
+
+#: task_manager/mixins.py:13
+msgid "You need to log in to view this page"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: tasks/views.py:26
+#, fuzzy
+#| msgid "You have successfully updated profile"
+msgid "Task successfully created"
+msgstr "Задача создана"
+
+#: tasks/views.py:38
+#, fuzzy
+#| msgid "You have successfully updated profile"
+msgid "Task successfully updated"
+msgstr "Задача обновлена"
+
+#: tasks/views.py:45
+#, fuzzy
+#| msgid "You have successfully logged in"
+msgid "Task successfully deleted"
+msgstr "Задача удалена"
+
+#: tasks/views.py:47
+#, fuzzy
+#| msgid "You have no access to delete this profile"
+msgid "You have no access to delete this task"
+msgstr "У вас нет прав для удаления задачи"
+
 #: templates/base.html:27
 msgid "main_page_title"
 msgstr "Менеджер задач"
@@ -28,13 +90,13 @@ msgstr "Менеджер задач"
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: templates/base.html:35
-msgid "Control"
-msgstr "Админка"
-
-#: templates/base.html:36
+#: templates/base.html:34
 msgid "header_users"
 msgstr "Пользователи"
+
+#: templates/base.html:36
+msgid "Control"
+msgstr "Админка"
 
 #: templates/base.html:37
 msgid "header_labels"
@@ -84,7 +146,7 @@ msgstr "Вы уверены, что ходите удалить"
 #: templates/labels/delete.html:15 templates/statuses/delete.html:15
 #: templates/tasks/delete.html:15 templates/users/delete.html:15
 msgid "Yes, delete"
-msgstr ""
+msgstr "Да, удалить"
 
 #: templates/labels/delete.html:18 templates/statuses/delete.html:18
 #: templates/tasks/delete.html:18 templates/tasks/view.html:47
@@ -122,7 +184,7 @@ msgstr "Изменить"
 #: templates/tasks/list.html:40 templates/tasks/view.html:46
 #: templates/users/list.html:29
 msgid "Delete"
-msgstr "Да, удалить"
+msgstr "Удалить"
 
 #: templates/labels/update.html:11
 msgid "Change label"
@@ -272,7 +334,3 @@ msgstr "Профиль удален"
 #: users/views.py:64
 msgid "You have no access to delete this profile"
 msgstr "У вас нет прав для изменения другого пользователя."
-
-#: task_manager/mixins.py:13
-msgid "You need to log in to view this page"
-msgstr "Вы не авторизованы! Пожалуйста, выполните вход."

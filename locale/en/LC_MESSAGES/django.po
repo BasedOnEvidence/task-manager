@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 23:16+0300\n"
+"POT-Creation-Date: 2022-08-21 23:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: labels/views.py:22
+msgid "Label successfully created"
+msgstr ""
+
+#: labels/views.py:30
+msgid "Label successfully updated"
+msgstr ""
+
+#: labels/views.py:37
+msgid "Label successfully deleted"
+msgstr ""
+
+#: statuses/views.py:22
+msgid "Status successfully created"
+msgstr ""
+
+#: statuses/views.py:30
+msgid "Status successfully updated"
+msgstr ""
+
+#: statuses/views.py:37
+msgid "Status successfully deleted"
+msgstr ""
+
 #: task_manager/mixins.py:13
 msgid "You need to log in to view this page"
+msgstr ""
+
+#: tasks/views.py:26
+msgid "Task successfully created"
+msgstr ""
+
+#: tasks/views.py:38
+msgid "Task successfully updated"
+msgstr ""
+
+#: tasks/views.py:45
+msgid "Task successfully deleted"
+msgstr ""
+
+#: tasks/views.py:47
+msgid "You have no access to delete this task"
 msgstr ""
 
 #: templates/base.html:27
@@ -30,13 +70,13 @@ msgstr "Django task manager"
 msgid "Task manager"
 msgstr ""
 
-#: templates/base.html:35
-msgid "Control"
-msgstr ""
-
-#: templates/base.html:36
+#: templates/base.html:34
 msgid "header_users"
 msgstr "Users"
+
+#: templates/base.html:36
+msgid "Control"
+msgstr ""
 
 #: templates/base.html:37
 msgid "header_labels"

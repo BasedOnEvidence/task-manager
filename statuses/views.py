@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
@@ -18,7 +19,7 @@ class StatusCreateView(LoginPermissionMixin, SuccessMessageMixin, CreateView):
     form_class = StatusForm
     template_name = 'statuses/create.html'
     success_url = reverse_lazy('statuses')
-    success_message = 'Status successfully created'
+    success_message = gettext_lazy('Status successfully created')
 
 
 class StatusUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
@@ -26,11 +27,11 @@ class StatusUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
     form_class = StatusForm
     template_name = 'statuses/update.html'
     success_url = reverse_lazy('statuses')
-    success_message = 'Status successfully updated'
+    success_message = gettext_lazy('Status successfully updated')
 
 
 class StatusDeleteView(LoginPermissionMixin, SuccessMessageMixin, DeleteView):
     model = Status
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')
-    success_message = 'Status successfully deleted'
+    success_message = gettext_lazy('Status successfully deleted')

@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
@@ -22,7 +23,7 @@ class TaskCreateView(LoginPermissionMixin, SuccessMessageMixin, CreateView):
     form_class = TaskForm
     template_name = 'tasks/create.html'
     success_url = reverse_lazy('tasks')
-    success_message = 'Task successfully created'
+    success_message = gettext_lazy('Task successfully created')
 
     def form_valid(self, form):
         form.instance.author = User.objects.get(id=self.request.user.pk)
@@ -34,16 +35,16 @@ class TaskUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
     form_class = TaskForm
     template_name = 'tasks/update.html'
     success_url = reverse_lazy('tasks')
-    success_message = 'Task successfully updated'
+    success_message = gettext_lazy('Task successfully updated')
 
 
 class TaskDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = reverse_lazy('tasks')
-    success_message = 'Task successfully deleted'
+    success_message = gettext_lazy('Task successfully deleted')
     error_url = reverse_lazy('users')
-    error_message = 'You have no access to delete this task'
+    error_message = gettext_lazy('You have no access to delete this task')
 
     def test_func(self):
         return self.request.user.pk == self.get_object().author.pk

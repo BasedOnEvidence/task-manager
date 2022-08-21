@@ -340,7 +340,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: users/views.py:62
 msgid "Profile have been deleted"
-msgstr "Профиль удален"
+msgstr "Пользователь успешно удалён"
 
 #: users/views.py:64
 msgid "You have no access to delete this profile"

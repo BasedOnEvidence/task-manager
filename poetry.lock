@@ -382,11 +382,11 @@ brotli = ["brotlipy (>=0.6.0)", "brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
 
 [[package]]
 name = "whitenoise"
-version = "6.2.0"
+version = "5.3.0"
 description = "Radically simplified static file serving for WSGI applications"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.5, <4"
 
 [package.extras]
 brotli = ["brotli"]
@@ -394,7 +394,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9.0"
-content-hash = "9c2ec4e98dd609e50a924c232524da6ccc49e42ae70a09492cc3e2de7872dca3"
+content-hash = "15bb4c3ea6b4fcc31702ba23339e7d700567634834c8ba6371becdcf1352ebd6"
 
 [metadata.files]
 asgiref = []

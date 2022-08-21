@@ -3,6 +3,9 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["BasedOnEvidence <TestTypoTest@gmail.com>"]
+packages = [
+    { include = "task_manager" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9.0"
@@ -10,7 +13,7 @@ Django = "^4.1.0"
 python-dotenv = "^0.20.0"
 dj-database-url = "^0.5.0"
 psycopg2-binary = "^2.9.3"
-whitenoise = "^6.1"
+whitenoise = "^5.3.0"
 django-filter = "^21.1"
 django-bootstrap4 = "^22.1"
 rollbar = "^0.16.2"

@@ -1,5 +1,3 @@
-include task_manager/.env
-
 CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 CREATE_ENV = $(shell test ! -f ./task_manager/.env && cp ./task_manager/template.env ./task_manager/.env)
 
@@ -51,7 +49,6 @@ push:
 	git push --set-upstream origin $(CURRENT_BRANCH)
 
 heroku:
-	heroku config:set SECRET_KEY=$(SECRET_KEY) --app task-manager-template
-	heroku config:set DEBUG=$(DEBUG) --app task-manager-template
+	heroku config:set DEBUG=False --app task-manager-template
 	git push heroku main:main
 	heroku run make migrate --app task-manager-template

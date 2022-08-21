@@ -48,8 +48,6 @@ msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
 #: statuses/views.py:30
-#, fuzzy
-#| msgid "You have successfully updated profile"
 msgid "Status successfully updated"
 msgstr "Статус успешно изменён"
 

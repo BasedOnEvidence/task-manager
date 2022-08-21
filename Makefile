@@ -49,6 +49,5 @@ push:
 	git push --set-upstream origin $(CURRENT_BRANCH)
 
 heroku:
-	heroku config:set DEBUG=False --app task-manager-template
 	git push heroku main:main
 	heroku run make migrate --app task-manager-template

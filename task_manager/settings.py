@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+import rollbar
+import dj_database_url
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +27,7 @@ ROLLBAR = {
     'environment': 'development' if DEBUG else 'production',
     'root': BASE_DIR,
 }
-import rollbar                    # noqa E402
+
 rollbar.init(**ROLLBAR)
 
 # Quick-start development settings - unsuitable for production
@@ -105,6 +107,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation

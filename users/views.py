@@ -58,7 +58,7 @@ class UserUpdateView(LoginAndAccessPermissionMixin, SuccessMessageMixin, UpdateV
 class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
     template_name = 'users/delete.html'
     model = User
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('users')
     success_message = gettext_lazy('Profile have been deleted')
     error_url = reverse_lazy('users')
     error_message = gettext_lazy('You have no access to delete this profile')

@@ -45,7 +45,7 @@ msgstr "Имя"
 
 #: statuses/views.py:22
 msgid "Status successfully created"
-msgstr "Статус создан"
+msgstr "Статус успешно создан"
 
 #: statuses/views.py:30
 #, fuzzy

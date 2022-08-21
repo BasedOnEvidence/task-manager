@@ -1,9 +1,13 @@
 include task_manager/.env
 
 CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
+CREATE_ENV = $(shell test ! -f ./task_manager/.env && cp ./task_manager/template.env ./task_manager/.env)
 
-install: .env
+install:
 	poetry install
+
+create_env:
+	$(CREATE_ENV)
 
 update:
 	poetry update

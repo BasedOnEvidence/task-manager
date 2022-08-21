@@ -18,6 +18,8 @@ jobs:
           python-version: 3.10.4
       - name: install poetry
         run: pip install poetry
+      - name: create env
+        run: make create_env
       - name: install dependency
         run: make install
       - name: lint

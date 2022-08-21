@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 23:35+0300\n"
+"POT-Creation-Date: 2022-08-22 00:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,6 +307,16 @@ msgstr ""
 #: templates/users/update.html:15
 msgid "Update"
 msgstr ""
+
+#: users/forms.py:9
+msgid "First name"
+msgstr ""
+
+#: users/forms.py:10
+#, fuzzy
+#| msgid "Last login"
+msgid "Last name"
+msgstr "Last login"
 
 #: users/views.py:24
 msgid ""

@@ -27,6 +27,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: 3ba8c3964a575b57af3f6eb937f3024e6184500b4621f68cdc17aa3c27c3a2ee
         with:
-          coverageCommand: poetry run coverage run manage.py test
+          coverageCommand: make coverage
       - name: lint
         run: make lint

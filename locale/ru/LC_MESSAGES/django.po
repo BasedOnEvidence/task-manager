@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 00:37+0300\n"
+"POT-Creation-Date: 2022-08-22 01:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
+#: templates/labels/list.html:13 templates/statuses/list.html:13
+#: templates/tasks/list.html:21
+msgid "Name"
+msgstr "Имя"
 
 #: labels/views.py:22
 msgid "Label successfully created"
@@ -32,11 +38,6 @@ msgstr "Метка успешно обновлена"
 msgid "Label successfully deleted"
 msgstr "Метка успешно удалена"
 
-#: statuses/forms.py:12 templates/labels/list.html:13
-#: templates/statuses/list.html:13 templates/tasks/list.html:21
-msgid "Name"
-msgstr "Имя"
-
 #: statuses/views.py:22
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
@@ -47,11 +48,32 @@ msgstr "Статус успешно изменён"
 
 #: statuses/views.py:37
 msgid "Status successfully deleted"
-msgstr "Статус успешно удален"
+msgstr "Статус успешно удалён"
 
 #: task_manager/mixins.py:13
 msgid "You need to log in to view this page"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: tasks/forms.py:14 tasks/forms.py:26 templates/tasks/list.html:22
+#: templates/tasks/view.html:26
+msgid "Status"
+msgstr "Статус"
+
+#: tasks/forms.py:15 tasks/forms.py:27 templates/tasks/list.html:24
+#: templates/tasks/view.html:22
+msgid "Performer"
+msgstr "Исполнитель"
+
+#: tasks/forms.py:16
+#, fuzzy
+#| msgid "Registration"
+msgid "Description"
+msgstr "Регистрация"
+
+#: tasks/forms.py:17 tasks/forms.py:28 templates/labels/list.html:7
+#: templates/tasks/view.html:35
+msgid "Labels"
+msgstr "Метки"
 
 #: tasks/views.py:26
 msgid "Task successfully created"
@@ -141,10 +163,6 @@ msgstr "Да, удалить"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: templates/labels/list.html:7 templates/tasks/view.html:35
-msgid "Labels"
-msgstr "Метки"
-
 #: templates/labels/list.html:12 templates/statuses/list.html:12
 #: templates/tasks/list.html:20 templates/users/list.html:11
 msgid "ID"
@@ -212,17 +230,9 @@ msgstr "Задачи"
 msgid "Filter"
 msgstr "Фильтр"
 
-#: templates/tasks/list.html:22 templates/tasks/view.html:26
-msgid "Status"
-msgstr "Статус"
-
 #: templates/tasks/list.html:23 templates/tasks/view.html:18
 msgid "Author"
 msgstr "Автор"
-
-#: templates/tasks/list.html:24 templates/tasks/view.html:22
-msgid "Performer"
-msgstr "Исполнитель"
 
 #: templates/tasks/update.html:11
 msgid "Change task"

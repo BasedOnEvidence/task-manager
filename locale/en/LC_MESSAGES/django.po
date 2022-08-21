@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 00:37+0300\n"
+"POT-Creation-Date: 2022-08-22 01:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
+#: templates/labels/list.html:13 templates/statuses/list.html:13
+#: templates/tasks/list.html:21
+msgid "Name"
+msgstr "Name"
 
 #: labels/views.py:22
 msgid "Label successfully created"
@@ -29,11 +35,6 @@ msgstr ""
 #: labels/views.py:37
 msgid "Label successfully deleted"
 msgstr ""
-
-#: statuses/forms.py:12 templates/labels/list.html:13
-#: templates/statuses/list.html:13 templates/tasks/list.html:21
-msgid "Name"
-msgstr "Name"
 
 #: statuses/views.py:22
 msgid "Status successfully created"
@@ -49,6 +50,25 @@ msgstr ""
 
 #: task_manager/mixins.py:13
 msgid "You need to log in to view this page"
+msgstr ""
+
+#: tasks/forms.py:14 tasks/forms.py:26 templates/tasks/list.html:22
+#: templates/tasks/view.html:26
+msgid "Status"
+msgstr "Status"
+
+#: tasks/forms.py:15 tasks/forms.py:27 templates/tasks/list.html:24
+#: templates/tasks/view.html:22
+msgid "Performer"
+msgstr "Performer"
+
+#: tasks/forms.py:16
+msgid "Description"
+msgstr ""
+
+#: tasks/forms.py:17 tasks/forms.py:28 templates/labels/list.html:7
+#: templates/tasks/view.html:35
+msgid "Labels"
 msgstr ""
 
 #: tasks/views.py:26
@@ -143,10 +163,6 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: templates/labels/list.html:7 templates/tasks/view.html:35
-msgid "Labels"
-msgstr ""
-
 #: templates/labels/list.html:12 templates/statuses/list.html:12
 #: templates/tasks/list.html:20 templates/users/list.html:11
 msgid "ID"
@@ -222,17 +238,9 @@ msgstr "Tasks"
 msgid "Filter"
 msgstr ""
 
-#: templates/tasks/list.html:22 templates/tasks/view.html:26
-msgid "Status"
-msgstr "Status"
-
 #: templates/tasks/list.html:23 templates/tasks/view.html:18
 msgid "Author"
 msgstr "Author"
-
-#: templates/tasks/list.html:24 templates/tasks/view.html:22
-msgid "Performer"
-msgstr "Performer"
 
 #: templates/tasks/update.html:11
 #, fuzzy

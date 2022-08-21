@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 00:11+0300\n"
+"POT-Creation-Date: 2022-08-22 00:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,11 @@ msgstr ""
 #: labels/views.py:37
 msgid "Label successfully deleted"
 msgstr ""
+
+#: statuses/forms.py:12 templates/labels/list.html:13
+#: templates/statuses/list.html:13 templates/tasks/list.html:21
+msgid "Name"
+msgstr "Name"
 
 #: statuses/views.py:22
 msgid "Status successfully created"
@@ -146,11 +151,6 @@ msgstr ""
 #: templates/tasks/list.html:20 templates/users/list.html:11
 msgid "ID"
 msgstr "ID"
-
-#: templates/labels/list.html:13 templates/statuses/list.html:13
-#: templates/tasks/list.html:21
-msgid "Name"
-msgstr "Name"
 
 #: templates/labels/list.html:14 templates/statuses/list.html:14
 #: templates/tasks/list.html:25 templates/users/list.html:14
@@ -308,16 +308,6 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: users/forms.py:9
-msgid "First name"
-msgstr ""
-
-#: users/forms.py:10
-#, fuzzy
-#| msgid "Last login"
-msgid "Last name"
-msgstr "Last login"
-
 #: users/views.py:24
 msgid ""
 "Registration successfuly completed. Use your username and password to login"
@@ -346,6 +336,11 @@ msgstr ""
 #: users/views.py:64
 msgid "You have no access to delete this profile"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Last login"
+#~ msgid "Last name"
+#~ msgstr "Last login"
 
 #~ msgid "company_name"
 #~ msgstr "Hexlet"

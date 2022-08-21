@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 00:11+0300\n"
+"POT-Creation-Date: 2022-08-22 00:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,11 @@ msgstr "Метка обновлена"
 #| msgid "You have successfully logged in"
 msgid "Label successfully deleted"
 msgstr "Метка удалена"
+
+#: statuses/forms.py:12 templates/labels/list.html:13
+#: templates/statuses/list.html:13 templates/tasks/list.html:21
+msgid "Name"
+msgstr "Имя"
 
 #: statuses/views.py:22
 msgid "Status successfully created"
@@ -163,11 +168,6 @@ msgstr "Метки"
 msgid "ID"
 msgstr "ID"
 
-#: templates/labels/list.html:13 templates/statuses/list.html:13
-#: templates/tasks/list.html:21
-msgid "Name"
-msgstr "Имя"
-
 #: templates/labels/list.html:14 templates/statuses/list.html:14
 #: templates/tasks/list.html:25 templates/users/list.html:14
 msgid "Creation date"
@@ -192,7 +192,7 @@ msgstr "Изменение метки"
 
 #: templates/statuses/create.html:11 templates/statuses/list.html:8
 msgid "Create status"
-msgstr "Изменение статуса"
+msgstr "Создать статус"
 
 #: templates/statuses/delete.html:12
 msgid "Delete status"
@@ -306,20 +306,9 @@ msgstr "Удалить аккаунт"
 msgid "Update"
 msgstr "Изменить"
 
-#: users/forms.py:9
-#, fuzzy
-#| msgid "Full name"
-msgid "First name"
-msgstr "Имя"
-
-#: users/forms.py:10
-#, fuzzy
-#| msgid "Last login"
-msgid "Last name"
-msgstr "Фамилия"
-
 #: users/views.py:24
-msgid "Registration successfuly completed. Use your username and password to login"
+msgid ""
+"Registration successfuly completed. Use your username and password to login"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:32

@@ -212,7 +212,7 @@ msgstr "Изменение статуса"
 
 #: templates/tasks/create.html:11 templates/tasks/list.html:8
 msgid "Create task"
-msgstr "Создание задачи"
+msgstr "Создать задачу"
 
 #: templates/tasks/delete.html:12
 msgid "Delete task"

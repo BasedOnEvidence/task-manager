@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -164,5 +163,3 @@ LOGOUT_REDIRECT_URL = '/'
 BASE_URL = 'http://127.0.0.1:8000'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())

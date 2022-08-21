@@ -4,7 +4,6 @@ CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 install: .env
 	poetry install
-	export DJANGO_SETTINGS_MODULE=hello_django.settings
 
 update:
 	poetry update

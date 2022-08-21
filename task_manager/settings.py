@@ -19,7 +19,15 @@ from dotenv import load_dotenv
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
+ROLLBAR = {
+    'access_token': os.environ.get('ROLLBAR_ACCESS_TOKEN'),
+    'environment': 'development' if DEBUG else 'production',
+    'root': BASE_DIR,
+}
+import rollbar                    # noqa E402
+rollbar.init(**ROLLBAR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -28,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = [
     'task-manager-template.herokuapp.com',
@@ -64,7 +72,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware'
+    'django.middleware.locale.LocaleMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware'
 ]
 
 ROOT_URLCONF = 'task_manager.urls'

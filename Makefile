@@ -18,6 +18,11 @@ lint:
 tests:
 	poetry run pytest -vv -s
 
+coverage:
+	poetry run coverage run manage.py test
+	poetry run coverage xml
+	poetry run coverage report
+
 start:
 	python3 manage.py runserver
 

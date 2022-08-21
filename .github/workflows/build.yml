@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.10.4
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.4
+      - name: install poetry
+        run: pip install poetry
+      - name: install dependency
+        run: make install
+      - name: lint
+        run: make lint
+      - name: code coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: 3ba8c3964a575b57af3f6eb937f3024e6184500b4621f68cdc17aa3c27c3a2ee
+        with:
+          coverageCommand: make coverage

@@ -42,7 +42,7 @@
         </nav>
         <nav class="my-2 my-md-0 mr-md-3">
             {% if user.is_authenticated %}
-            <a class="btn btn-outline-primary" href="{% url 'logout' %}">{% trans 'header_logout' %}: {{ user }}</a>
+            <a class="btn btn-outline-primary" href="{% url 'logout' %}">{% trans 'header_logout' %}</a>
             {% else %}
             <a class="btn btn-outline-primary" href="{% url 'login' %}">{% trans 'header_login' %}</a>
             <a class="btn btn-outline-primary" href="{% url 'create_user' %}">{% trans 'header_register' %}</a>

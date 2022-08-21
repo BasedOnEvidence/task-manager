@@ -12,7 +12,7 @@
                 <h1 align="center">{% trans 'Delete label' %}</h1>
                 <p>{% trans 'Are you sure you want to delete the label:' %} {{ label }}?</p>
                 <form method="post">{% csrf_token %}
-                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Delete' %}</button></div>
+                    <div align="center"><button class="btn btn-primary" type="submit">{% trans 'Yes, delete' %}</button></div>
                 </form>
                 <br>
                 <div align="center"><a href="{% url 'labels' %}">{% trans 'Cancel' %}</a></div>

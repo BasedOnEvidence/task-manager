@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 16:57+0300\n"
+"POT-Creation-Date: 2022-08-21 18:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,13 +81,10 @@ msgstr "Удалить метку"
 msgid "Are you sure you want to delete the label:"
 msgstr "Вы уверены, что ходите удалить"
 
-#: templates/labels/delete.html:15 templates/labels/list.html:26
-#: templates/statuses/delete.html:15 templates/statuses/list.html:26
-#: templates/tasks/delete.html:15 templates/tasks/list.html:40
-#: templates/tasks/view.html:46 templates/users/delete.html:15
-#: templates/users/list.html:29
-msgid "Delete"
-msgstr "Да, удалить"
+#: templates/labels/delete.html:15 templates/statuses/delete.html:15
+#: templates/tasks/delete.html:15 templates/users/delete.html:15
+msgid "Yes, delete"
+msgstr ""
 
 #: templates/labels/delete.html:18 templates/statuses/delete.html:18
 #: templates/tasks/delete.html:18 templates/tasks/view.html:47
@@ -120,6 +117,12 @@ msgstr "Дата создания"
 #: templates/users/list.html:28
 msgid "Change"
 msgstr "Изменить"
+
+#: templates/labels/list.html:26 templates/statuses/list.html:26
+#: templates/tasks/list.html:40 templates/tasks/view.html:46
+#: templates/users/list.html:29
+msgid "Delete"
+msgstr "Да, удалить"
 
 #: templates/labels/update.html:11
 msgid "Change label"
@@ -221,9 +224,13 @@ msgstr "Полное имя"
 msgid "Last login"
 msgstr "Дата последнего входа"
 
-#: templates/users/login.html:12 templates/users/login.html:15
-msgid "Login"
+#: templates/users/login.html:12
+msgid "Entry"
 msgstr "Вход"
+
+#: templates/users/login.html:15
+msgid "Login"
+msgstr "Войти"
 
 #: templates/users/update.html:11
 msgid "Change user"
@@ -236,3 +243,8 @@ msgstr "Удалить аккаунт"
 #: templates/users/update.html:15
 msgid "Update"
 msgstr "Изменить"
+
+#: users/views.py:24
+msgid ""
+"Registration successfuly completed. Use your username and password to login"
+msgstr ""

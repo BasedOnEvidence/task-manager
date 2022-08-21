@@ -14,7 +14,7 @@ build:
 	poetry build
 
 lint:
-	poetry run flake8 page_loader
+	poetry run flake8 task_manager users statuses tasks labels
 
 tests:
 	poetry run pytest -vv -s

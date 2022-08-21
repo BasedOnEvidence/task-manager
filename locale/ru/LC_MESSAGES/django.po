@@ -32,7 +32,7 @@ msgstr "Метка успешно создана"
 
 #: labels/views.py:30
 msgid "Label successfully updated"
-msgstr "Метка успешно обновлена"
+msgstr "Метка успешно изменена"
 
 #: labels/views.py:37
 msgid "Label successfully deleted"
@@ -81,7 +81,7 @@ msgstr "Задача успешно создана"
 
 #: tasks/views.py:38
 msgid "Task successfully updated"
-msgstr "Задача успешно обновлена"
+msgstr "Задача успешно изменена"
 
 #: tasks/views.py:45
 msgid "Task successfully deleted"

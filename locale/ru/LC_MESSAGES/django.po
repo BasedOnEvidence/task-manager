@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 18:18+0300\n"
+"POT-Creation-Date: 2022-08-21 23:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,39 +22,39 @@ msgstr ""
 
 #: templates/base.html:27
 msgid "main_page_title"
-msgstr ""
+msgstr "Менеджер задач"
 
 #: templates/base.html:32
 msgid "Task manager"
-msgstr ""
+msgstr "Менеджер задач"
 
 #: templates/base.html:35
 msgid "Control"
-msgstr ""
+msgstr "Админка"
 
 #: templates/base.html:36
 msgid "header_users"
-msgstr ""
+msgstr "Пользователи"
 
 #: templates/base.html:37
 msgid "header_labels"
-msgstr ""
+msgstr "Метки"
 
 #: templates/base.html:38
 msgid "header_tasks"
-msgstr ""
+msgstr "Задачи"
 
 #: templates/base.html:39
 msgid "header_statuses"
-msgstr ""
+msgstr "Статусы"
 
 #: templates/base.html:40
 msgid "header_profile"
-msgstr ""
+msgstr "Профиль"
 
 #: templates/base.html:45
 msgid "header_logout"
-msgstr ""
+msgstr "Выход"
 
 #: templates/base.html:47
 msgid "header_login"
@@ -248,3 +248,31 @@ msgstr "Изменить"
 msgid ""
 "Registration successfuly completed. Use your username and password to login"
 msgstr ""
+
+#: users/views.py:32
+msgid "You have successfully logged in"
+msgstr "Вы залогинены"
+
+#: users/views.py:41
+msgid "You have successfully logged out"
+msgstr "Вы разлогинены"
+
+#: users/views.py:50
+msgid "You have successfully updated profile"
+msgstr "Пользователь успешно изменён"
+
+#: users/views.py:52
+msgid "You have no access to edit this profile"
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: users/views.py:62
+msgid "Profile have been deleted"
+msgstr "Профиль удален"
+
+#: users/views.py:64
+msgid "You have no access to delete this profile"
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: task_manager/mixins.py:13
+msgid "You need to log in to view this page"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."

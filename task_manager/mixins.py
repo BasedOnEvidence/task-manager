@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.shortcuts import redirect
+from django.utils.translation import gettext
 
 
 class LoginPermissionMixin(LoginRequiredMixin):
@@ -9,7 +10,7 @@ class LoginPermissionMixin(LoginRequiredMixin):
     request = None
 
     def handle_no_permission(self):
-        self.error_message = 'You need to log in to view this page'
+        self.error_message = gettext('You need to log in to view this page')
         self.login_url = 'login'
         messages.error(self.request, self.error_message)
         return super().handle_no_permission()

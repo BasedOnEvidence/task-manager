@@ -1,4 +1,4 @@
-from django.utils.translation import gettext_lazy
+from django.utils.translation import gettext_lazy, gettext
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
@@ -29,7 +29,7 @@ class UserLoginView(SuccessMessageMixin, LoginView):
     form_class = LoginForm
     template_name = 'users/login.html'
     success_url = reverse_lazy('home')
-    success_message = 'You have successfully logged in'
+    success_message = gettext_lazy('You have successfully logged in')
 
 
 class UserLogoutView(LogoutView):
@@ -38,7 +38,7 @@ class UserLogoutView(LogoutView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            messages.info(request, 'You have successfully logged out')
+            messages.info(request, gettext('You have successfully logged out'))
         return super().dispatch(request, *args, **kwargs)
 
 
@@ -47,9 +47,9 @@ class UserUpdateView(LoginAndAccessPermissionMixin, SuccessMessageMixin, UpdateV
     model = User
     form_class = RegistrationForm
     success_url = reverse_lazy('users')
-    success_message = 'You have successfully updated profile'
+    success_message = gettext_lazy('You have successfully updated profile')
     error_url = reverse_lazy('users')
-    error_message = 'You have no access to edit this profile'
+    error_message = gettext_lazy('You have no access to edit this profile')
 
     def test_func(self):
         return self.request.user.pk == self.get_object().pk
@@ -59,9 +59,9 @@ class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteV
     template_name = 'users/delete.html'
     model = User
     success_url = reverse_lazy('home')
-    success_message = 'Profile have been deleted'
+    success_message = gettext_lazy('Profile have been deleted')
     error_url = reverse_lazy('users')
-    error_message = 'You have no access to delete this profile'
+    error_message = gettext_lazy('You have no access to delete this profile')
 
     def test_func(self):
         return self.request.user.pk == self.get_object().pk

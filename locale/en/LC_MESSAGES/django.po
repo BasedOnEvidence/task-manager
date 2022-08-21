@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-13 13:54+0300\n"
+"POT-Creation-Date: 2022-08-21 16:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,97 +18,247 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:26
+#: templates/base.html:27
 msgid "main_page_title"
 msgstr "Django task manager"
 
-#: templates/base.html:31
-msgid "company_name"
-msgstr "Hexlet"
+#: templates/base.html:32
+msgid "Task manager"
+msgstr ""
 
-#: templates/base.html:34
+#: templates/base.html:35
+msgid "Control"
+msgstr ""
+
+#: templates/base.html:36
 msgid "header_users"
 msgstr "Users"
 
-#: templates/base.html:35
+#: templates/base.html:37
 msgid "header_labels"
 msgstr "Labels"
 
-#: templates/base.html:36
+#: templates/base.html:38
 msgid "header_tasks"
 msgstr "Tasks"
 
-#: templates/base.html:37
+#: templates/base.html:39
 msgid "header_statuses"
 msgstr "Statuses"
 
-#: templates/base.html:38
+#: templates/base.html:40
 msgid "header_profile"
 msgstr "Profile"
 
-#: templates/base.html:42
+#: templates/base.html:45
 msgid "header_logout"
 msgstr "Logout"
 
-#: templates/base.html:44
+#: templates/base.html:47
 msgid "header_login"
 msgstr "Login"
 
-#: templates/base.html:45
+#: templates/base.html:48
 msgid "header_register"
 msgstr "Register"
 
-#: templates/statuses/create.html:8 templates/statuses/list.html:7
-msgid "Create status"
-msgstr "Create status"
+#: templates/labels/create.html:11 templates/labels/list.html:8
+#, fuzzy
+#| msgid "Create task"
+msgid "Create label"
+msgstr "Create task"
 
-#: templates/statuses/list.html:6
-msgid "Statuses"
-msgstr "Statuses"
+#: templates/labels/create.html:14 templates/statuses/create.html:14
+#: templates/tasks/create.html:14
+#, fuzzy
+#| msgid "Create task"
+msgid "Create"
+msgstr "Create task"
 
-#: templates/statuses/list.html:11 templates/tasks/list.html:11
-#: templates/users/list.html:10
+#: templates/labels/delete.html:12
+msgid "Delete label"
+msgstr ""
+
+#: templates/labels/delete.html:13
+msgid "Are you sure you want to delete the label:"
+msgstr ""
+
+#: templates/labels/delete.html:15 templates/labels/list.html:26
+#: templates/statuses/delete.html:15 templates/statuses/list.html:26
+#: templates/tasks/delete.html:15 templates/tasks/list.html:40
+#: templates/tasks/view.html:46 templates/users/delete.html:15
+#: templates/users/list.html:29
+msgid "Delete"
+msgstr ""
+
+#: templates/labels/delete.html:18 templates/statuses/delete.html:18
+#: templates/tasks/delete.html:18 templates/tasks/view.html:47
+#: templates/users/delete.html:18
+msgid "Cancel"
+msgstr ""
+
+#: templates/labels/list.html:7 templates/tasks/view.html:35
+msgid "Labels"
+msgstr ""
+
+#: templates/labels/list.html:12 templates/statuses/list.html:12
+#: templates/tasks/list.html:20 templates/users/list.html:11
 msgid "ID"
 msgstr "ID"
 
-#: templates/statuses/list.html:12 templates/tasks/list.html:12
-#: templates/users/list.html:11
+#: templates/labels/list.html:13 templates/statuses/list.html:13
+#: templates/tasks/list.html:21
 msgid "Name"
 msgstr "Name"
 
-#: templates/statuses/list.html:13 templates/tasks/list.html:16
-#: templates/users/list.html:13
+#: templates/labels/list.html:14 templates/statuses/list.html:14
+#: templates/tasks/list.html:25 templates/users/list.html:14
 msgid "Creation date"
 msgstr "Creation date"
 
-#: templates/tasks/create.html:8 templates/tasks/list.html:7
+#: templates/labels/list.html:25 templates/labels/update.html:14
+#: templates/statuses/list.html:25 templates/statuses/update.html:14
+#: templates/tasks/list.html:39 templates/tasks/update.html:14
+#: templates/users/list.html:28
+msgid "Change"
+msgstr ""
+
+#: templates/labels/update.html:11
+#, fuzzy
+#| msgid "header_labels"
+msgid "Change label"
+msgstr "Labels"
+
+#: templates/statuses/create.html:11 templates/statuses/list.html:8
+msgid "Create status"
+msgstr "Create status"
+
+#: templates/statuses/delete.html:12
+#, fuzzy
+#| msgid "Create status"
+msgid "Delete status"
+msgstr "Create status"
+
+#: templates/statuses/delete.html:13
+msgid "Are you sure you want to delete the status:"
+msgstr ""
+
+#: templates/statuses/list.html:7
+msgid "Statuses"
+msgstr "Statuses"
+
+#: templates/statuses/update.html:11
+#, fuzzy
+#| msgid "Create status"
+msgid "Change status"
+msgstr "Create status"
+
+#: templates/tasks/create.html:11 templates/tasks/list.html:8
 msgid "Create task"
 msgstr "Create task"
 
-#: templates/tasks/list.html:6
+#: templates/tasks/delete.html:12
+#, fuzzy
+#| msgid "Create task"
+msgid "Delete task"
+msgstr "Create task"
+
+#: templates/tasks/delete.html:13
+msgid "Are you sure you want to delete the task:"
+msgstr ""
+
+#: templates/tasks/list.html:7
 msgid "Tasks"
 msgstr "Tasks"
 
 #: templates/tasks/list.html:13
+msgid "Filter"
+msgstr ""
+
+#: templates/tasks/list.html:22 templates/tasks/view.html:26
 msgid "Status"
 msgstr "Status"
 
-#: templates/tasks/list.html:14
+#: templates/tasks/list.html:23 templates/tasks/view.html:18
 msgid "Author"
 msgstr "Author"
 
-#: templates/tasks/list.html:15
+#: templates/tasks/list.html:24 templates/tasks/view.html:22
 msgid "Performer"
 msgstr "Performer"
 
-#: templates/users/list.html:6
+#: templates/tasks/update.html:11
+#, fuzzy
+#| msgid "Create task"
+msgid "Change task"
+msgstr "Create task"
+
+#: templates/tasks/view.html:30
+msgid "Date of creation"
+msgstr ""
+
+#: templates/tasks/view.html:45
+msgid "Edit"
+msgstr ""
+
+#: templates/users/create.html:11
+msgid "Registration"
+msgstr ""
+
+#: templates/users/create.html:14
+#, fuzzy
+#| msgid "header_register"
+msgid "Register"
+msgstr "Register"
+
+#: templates/users/delete.html:12
+msgid "Delete user"
+msgstr ""
+
+#: templates/users/delete.html:13
+msgid "Are you sure you want to delete the user:"
+msgstr ""
+
+#: templates/users/list.html:7
 msgid "Users"
 msgstr "Users"
 
 #: templates/users/list.html:12
-msgid "Email"
-msgstr "Email"
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Users"
 
-#: templates/users/list.html:14
+#: templates/users/list.html:13
+msgid "Full name"
+msgstr ""
+
+#: templates/users/list.html:15
 msgid "Last login"
 msgstr "Last login"
+
+#: templates/users/login.html:12 templates/users/login.html:15
+#, fuzzy
+#| msgid "Last login"
+msgid "Login"
+msgstr "Last login"
+
+#: templates/users/update.html:11
+#, fuzzy
+#| msgid "header_users"
+msgid "Change user"
+msgstr "Users"
+
+#: templates/users/update.html:14
+msgid "Delete account"
+msgstr ""
+
+#: templates/users/update.html:15
+msgid "Update"
+msgstr ""
+
+#~ msgid "company_name"
+#~ msgstr "Hexlet"
+
+#~ msgid "Email"
+#~ msgstr "Email"

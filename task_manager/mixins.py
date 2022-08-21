@@ -25,6 +25,3 @@ class LoginAndAccessPermissionMixin(LoginPermissionMixin, UserPassesTestMixin):
             return super().handle_no_permission()
         messages.error(self.request, self.error_message)
         return redirect(self.error_url)
-
-    def test_func(self):
-        return self.request.user.pk == self.get_object().pk

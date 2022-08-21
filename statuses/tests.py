@@ -1,10 +1,13 @@
-from django.test import TestCase
+from django.test import TestCase, modify_settings
 from django.urls import reverse
 
 from statuses.models import Status
 from users.models import User
 
 
+@modify_settings(MIDDLEWARE={'remove': [
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+]})
 class UserTests(TestCase):
     fixtures = ['users.json', 'statuses.json']
 

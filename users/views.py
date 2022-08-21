@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
@@ -20,7 +21,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     form_class = RegistrationForm
     template_name = 'users/create.html'
     success_url = reverse_lazy('login')
-    success_message = 'Registration successfuly completed. Use your username and password to login'
+    success_message = gettext_lazy('Registration successfuly completed. Use your username and password to login')
 
 
 class UserLoginView(SuccessMessageMixin, LoginView):
@@ -50,6 +51,9 @@ class UserUpdateView(LoginAndAccessPermissionMixin, SuccessMessageMixin, UpdateV
     error_url = reverse_lazy('users')
     error_message = 'You have no access to edit this profile'
 
+    def test_func(self):
+        return self.request.user.pk == self.get_object().pk
+
 
 class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
     template_name = 'users/delete.html'
@@ -58,3 +62,6 @@ class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteV
     success_message = 'Profile have been deleted'
     error_url = reverse_lazy('users')
     error_message = 'You have no access to delete this profile'
+
+    def test_func(self):
+        return self.request.user.pk == self.get_object().pk

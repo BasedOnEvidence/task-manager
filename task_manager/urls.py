@@ -23,7 +23,8 @@ from tasks import views as tasks_view
 from labels import views as labels_view
 from django.urls import path
 
-urlpatterns = [
+
+urlpatterns = (
     path('', view.HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('login/', user_view.UserLoginView.as_view(), name='login'),
@@ -45,4 +46,4 @@ urlpatterns = [
     path('labels/create/', labels_view.LabelCreateView.as_view(), name='create_label'),
     path('labels/<int:pk>/update/', labels_view.LabelUpdateView.as_view(), name='update_label'),
     path('labels/<int:pk>/delete/', labels_view.LabelDeleteView.as_view(), name='delete_label')
-]
+)

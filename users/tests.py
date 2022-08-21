@@ -1,8 +1,11 @@
-from django.test import TestCase
+from django.test import TestCase, modify_settings
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
 
+@modify_settings(MIDDLEWARE={'remove': [
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+]})
 class UserTests(TestCase):
     fixtures = ['users.json']
 

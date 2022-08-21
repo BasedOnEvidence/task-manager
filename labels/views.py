@@ -2,17 +2,18 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
 
+from task_manager.mixins import LoginPermissionMixin
 from labels.models import Label
 from labels.forms import LabelForm
 
 
-class LabelsListView(ListView):
+class LabelsListView(LoginPermissionMixin, ListView):
     model = Label
     template_name = 'labels/list.html'
     context_object_name = 'labels'
 
 
-class LabelCreateView(SuccessMessageMixin, CreateView):
+class LabelCreateView(LoginPermissionMixin, SuccessMessageMixin, CreateView):
     model = Label
     form_class = LabelForm
     template_name = 'labels/create.html'
@@ -20,7 +21,7 @@ class LabelCreateView(SuccessMessageMixin, CreateView):
     success_message = 'Label successfully created'
 
 
-class LabelUpdateView(SuccessMessageMixin, UpdateView):
+class LabelUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
     model = Label
     form_class = LabelForm
     template_name = 'labels/update.html'
@@ -28,7 +29,7 @@ class LabelUpdateView(SuccessMessageMixin, UpdateView):
     success_message = 'Label successfully updated'
 
 
-class LabelDeleteView(SuccessMessageMixin, DeleteView):
+class LabelDeleteView(LoginPermissionMixin, SuccessMessageMixin, DeleteView):
     model = Label
     template_name = 'labels/delete.html'
     success_url = reverse_lazy('labels')

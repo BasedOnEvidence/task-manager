@@ -17,7 +17,7 @@ lint:
 	poetry run flake8 task_manager users statuses tasks labels
 
 tests:
-	poetry run pytest -vv -s
+	poetry run python manage.py test
 
 coverage:
 	poetry run coverage run manage.py test

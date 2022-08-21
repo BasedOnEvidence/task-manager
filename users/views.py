@@ -1,11 +1,10 @@
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
-from django.shortcuts import redirect
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
+from task_manager.mixins import LoginAndAccessPermissionMixin
 from users.forms import RegistrationForm, LoginForm
 from users.models import User
 
@@ -42,34 +41,20 @@ class UserLogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class UserUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView):
+class UserUpdateView(LoginAndAccessPermissionMixin, SuccessMessageMixin, UpdateView):
     template_name = 'users/update.html'
     model = User
     form_class = RegistrationForm
     success_url = reverse_lazy('users')
     success_message = 'You have successfully updated profile'
+    error_url = reverse_lazy('users')
     error_message = 'You have no access to edit this profile'
-    error_url = 'users'
-
-    def handle_no_permission(self):
-        messages.error(self.request, self.error_message)
-        return redirect(self.error_url)
-
-    def test_func(self):
-        return self.request.user.pk == self.get_object().pk
 
 
-class UserDeleteView(SuccessMessageMixin, UserPassesTestMixin, DeleteView):
+class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
     template_name = 'users/delete.html'
     model = User
     success_url = reverse_lazy('home')
     success_message = 'Profile have been deleted'
+    error_url = reverse_lazy('users')
     error_message = 'You have no access to delete this profile'
-    error_url = 'users'
-
-    def handle_no_permission(self):
-        messages.error(self.request, self.error_message)
-        return redirect(self.error_url)
-
-    def test_func(self):
-        return self.request.user.pk == self.get_object().pk

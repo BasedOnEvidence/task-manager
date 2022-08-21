@@ -51,13 +51,13 @@ msgstr "Статус успешно создан"
 #, fuzzy
 #| msgid "You have successfully updated profile"
 msgid "Status successfully updated"
-msgstr "Статус обновлен"
+msgstr "Статус успешно изменён"
 
 #: statuses/views.py:37
 #, fuzzy
 #| msgid "You have successfully logged in"
 msgid "Status successfully deleted"
-msgstr "Статус удален"
+msgstr "Статус успешно удален"
 
 #: task_manager/mixins.py:13
 msgid "You need to log in to view this page"

@@ -65,10 +65,8 @@ msgid "Performer"
 msgstr "Исполнитель"
 
 #: tasks/forms.py:16
-#, fuzzy
-#| msgid "Registration"
 msgid "Description"
-msgstr "Регистрация"
+msgstr "Описание"
 
 #: tasks/forms.py:17 tasks/forms.py:28 templates/labels/list.html:7
 #: templates/tasks/view.html:35

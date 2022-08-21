@@ -21,22 +21,16 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: labels/views.py:22
-#, fuzzy
-#| msgid "You have successfully updated profile"
 msgid "Label successfully created"
-msgstr "Метка создана"
+msgstr "Метка успешно создана"
 
 #: labels/views.py:30
-#, fuzzy
-#| msgid "You have successfully updated profile"
 msgid "Label successfully updated"
-msgstr "Метка обновлена"
+msgstr "Метка успешно обновлена"
 
 #: labels/views.py:37
-#, fuzzy
-#| msgid "You have successfully logged in"
 msgid "Label successfully deleted"
-msgstr "Метка удалена"
+msgstr "Метка успешно удалена"
 
 #: statuses/forms.py:12 templates/labels/list.html:13
 #: templates/statuses/list.html:13 templates/tasks/list.html:21
@@ -52,8 +46,6 @@ msgid "Status successfully updated"
 msgstr "Статус успешно изменён"
 
 #: statuses/views.py:37
-#, fuzzy
-#| msgid "You have successfully logged in"
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
 
@@ -62,26 +54,18 @@ msgid "You need to log in to view this page"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: tasks/views.py:26
-#, fuzzy
-#| msgid "You have successfully updated profile"
 msgid "Task successfully created"
-msgstr "Задача создана"
+msgstr "Задача успешно создана"
 
 #: tasks/views.py:38
-#, fuzzy
-#| msgid "You have successfully updated profile"
 msgid "Task successfully updated"
-msgstr "Задача обновлена"
+msgstr "Задача успешно обновлена"
 
 #: tasks/views.py:45
-#, fuzzy
-#| msgid "You have successfully logged in"
 msgid "Task successfully deleted"
-msgstr "Задача удалена"
+msgstr "Задача успешно удалена"
 
 #: tasks/views.py:47
-#, fuzzy
-#| msgid "You have no access to delete this profile"
 msgid "You have no access to delete this task"
 msgstr "У вас нет прав для удаления задачи"
 

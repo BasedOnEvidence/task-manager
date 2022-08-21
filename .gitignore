@@ -1,5 +1,5 @@
 .venv
-.env
+task_manager/.env
 __pycache__/
 dist/
 .vscode/

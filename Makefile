@@ -2,7 +2,7 @@ include task_manager/.env
 
 CURRENT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
-install:
+install: .env
 	poetry install
 	export DJANGO_SETTINGS_MODULE=hello_django.settings
 
@@ -46,6 +46,8 @@ push:
 	git add .
 	git commit -m "$(commit)"
 	git push --set-upstream origin $(CURRENT_BRANCH)
+
+heroku:
 	heroku config:set SECRET_KEY=$(SECRET_KEY) --app task-manager-template
 	heroku config:set DEBUG=$(DEBUG) --app task-manager-template
 	git push heroku main:main

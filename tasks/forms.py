@@ -8,11 +8,11 @@ from tasks.models import Task
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['name', 'status', 'performer', 'description', 'labels']
+        fields = ['name', 'status', 'executor', 'description', 'labels']
         labels = {
             'name': gettext_lazy('Name'),
             'status': gettext_lazy('Status'),
-            'performer': gettext_lazy('Performer'),
+            'executor': gettext_lazy('Performer'),
             'description': gettext_lazy('Description'),
             'labels': gettext_lazy('Labels')
         }
@@ -21,9 +21,9 @@ class TaskForm(ModelForm):
 class TasksFilter(FilterSet):
     class Meta:
         model = Task
-        fields = ['status', 'performer', 'labels']
+        fields = ['status', 'executor', 'labels']
         labels = {
             'status': gettext_lazy('Status'),
-            'performer': gettext_lazy('Performer'),
+            'executor': gettext_lazy('Performer'),
             'labels': gettext_lazy('Labels')
         }

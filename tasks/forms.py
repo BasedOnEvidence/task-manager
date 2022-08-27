@@ -21,7 +21,7 @@ class TaskForm(ModelForm):
 class TasksFilter(FilterSet):
     status = ModelChoiceFilter(label=gettext_lazy('Status'), queryset=Status.objects.all())
     executor = ModelChoiceFilter(label=gettext_lazy('Performer'), queryset=User.objects.all())
-    labels = ModelChoiceFilter(label=gettext_lazy('Labels'), queryset=Label.objects.all())
+    labels = ModelChoiceFilter(label=gettext_lazy('Label'), queryset=Label.objects.all())
     current_user_tasks = BooleanFilter(
         widget=CheckboxInput(),
         method='filter_current_user',

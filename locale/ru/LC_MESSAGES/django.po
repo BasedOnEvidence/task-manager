@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-27 13:55+0300\n"
+"POT-Creation-Date: 2022-08-27 14:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:14
+#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
 #: templates/labels/list.html:13 templates/statuses/list.html:13
 #: templates/tasks/list.html:21
 msgid "Name"
@@ -54,26 +54,29 @@ msgstr "Статус успешно удалён"
 msgid "You need to log in to view this page"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: tasks/forms.py:15 tasks/forms.py:41 templates/tasks/list.html:22
+#: tasks/forms.py:14 tasks/forms.py:22 templates/tasks/list.html:22
 #: templates/tasks/view.html:26
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/forms.py:16 tasks/forms.py:42 templates/tasks/list.html:24
+#: tasks/forms.py:15 tasks/forms.py:23 templates/tasks/list.html:24
 #: templates/tasks/view.html:22
 msgid "Performer"
 msgstr "Исполнитель"
 
-#: tasks/forms.py:17
+#: tasks/forms.py:16
 msgid "Description"
 msgstr "Описание"
 
-#: tasks/forms.py:18 tasks/forms.py:43 templates/labels/list.html:7
-#: templates/tasks/view.html:35
+#: tasks/forms.py:17 templates/labels/list.html:7 templates/tasks/view.html:35
 msgid "Labels"
 msgstr "Метки"
 
-#: tasks/forms.py:25
+#: tasks/forms.py:24
+msgid "Label"
+msgstr "Метка"
+
+#: tasks/forms.py:28
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 

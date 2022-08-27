@@ -21,7 +21,9 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     form_class = RegistrationForm
     template_name = 'users/create.html'
     success_url = reverse_lazy('login')
-    success_message = gettext_lazy('Registration successfuly completed. Use your username and password to login')
+    success_message = gettext_lazy(
+        'Registration successfuly completed. Use your username and password to login'
+    )
 
 
 class UserLoginView(SuccessMessageMixin, LoginView):

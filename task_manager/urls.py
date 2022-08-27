@@ -35,8 +35,12 @@ urlpatterns = (
     path('users/<int:pk>/delete/', user_view.UserDeleteView.as_view(), name='delete_user'),
     path('statuses/', statuses_view.StatusesListView.as_view(), name='statuses'),
     path('statuses/create/', statuses_view.StatusCreateView.as_view(), name='create_status'),
-    path('statuses/<int:pk>/update/', statuses_view.StatusUpdateView.as_view(), name='update_status'),
-    path('statuses/<int:pk>/delete/', statuses_view.StatusDeleteView.as_view(), name='delete_status'),
+    path(
+        'statuses/<int:pk>/update/', statuses_view.StatusUpdateView.as_view(), name='update_status'
+    ),
+    path(
+        'statuses/<int:pk>/delete/', statuses_view.StatusDeleteView.as_view(), name='delete_status'
+    ),
     path('tasks/', tasks_view.TasksListView.as_view(), name='tasks'),
     path('tasks/create/', tasks_view.TaskCreateView.as_view(), name='create_task'),
     path('tasks/<int:pk>/update/', tasks_view.TaskUpdateView.as_view(), name='update_task'),

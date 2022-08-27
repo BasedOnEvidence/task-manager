@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 01:02+0300\n"
+"POT-Creation-Date: 2022-08-27 13:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
+#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:14
 #: templates/labels/list.html:13 templates/statuses/list.html:13
 #: templates/tasks/list.html:21
 msgid "Name"
@@ -52,23 +52,27 @@ msgstr ""
 msgid "You need to log in to view this page"
 msgstr ""
 
-#: tasks/forms.py:14 tasks/forms.py:26 templates/tasks/list.html:22
+#: tasks/forms.py:15 tasks/forms.py:41 templates/tasks/list.html:22
 #: templates/tasks/view.html:26
 msgid "Status"
 msgstr "Status"
 
-#: tasks/forms.py:15 tasks/forms.py:27 templates/tasks/list.html:24
+#: tasks/forms.py:16 tasks/forms.py:42 templates/tasks/list.html:24
 #: templates/tasks/view.html:22
 msgid "Performer"
 msgstr "Performer"
 
-#: tasks/forms.py:16
+#: tasks/forms.py:17
 msgid "Description"
 msgstr ""
 
-#: tasks/forms.py:17 tasks/forms.py:28 templates/labels/list.html:7
+#: tasks/forms.py:18 tasks/forms.py:43 templates/labels/list.html:7
 #: templates/tasks/view.html:35
 msgid "Labels"
+msgstr ""
+
+#: tasks/forms.py:25
+msgid "Only my tasks"
 msgstr ""
 
 #: tasks/views.py:26

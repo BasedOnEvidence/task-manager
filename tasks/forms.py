@@ -1,5 +1,4 @@
-from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, CheckboxInput
 from django_filters import FilterSet, BooleanFilter
 from django.utils.translation import gettext_lazy
 
@@ -23,7 +22,7 @@ class TasksFilter(FilterSet):
 
     current_user_tasks = BooleanFilter(
         label=gettext_lazy('Only my tasks'),
-        widget=forms.CheckboxInput(),
+        widget=CheckboxInput(),
         method='filter_current_user',
         field_name='current_user_tasks'
     )

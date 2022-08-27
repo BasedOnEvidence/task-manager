@@ -230,7 +230,7 @@ msgstr "Задачи"
 
 #: templates/tasks/list.html:13
 msgid "Filter"
-msgstr "Фильтр"
+msgstr "Показать"
 
 #: templates/tasks/list.html:23 templates/tasks/view.html:18
 msgid "Author"

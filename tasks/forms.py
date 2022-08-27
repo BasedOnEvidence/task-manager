@@ -1,8 +1,8 @@
 from django.forms import ModelForm, CheckboxInput
-from django_filters import FilterSet, BooleanFilter
+from django_filters import FilterSet, BooleanFilter, ModelChoiceFilter
 from django.utils.translation import gettext_lazy
 
-from tasks.models import Task
+from tasks.models import Task, User, Label, Status
 
 
 class TaskForm(ModelForm):
@@ -19,12 +19,13 @@ class TaskForm(ModelForm):
 
 
 class TasksFilter(FilterSet):
-
+    status = ModelChoiceFilter(label=gettext_lazy('Status'), queryset=Status.objects.all())
+    executor = ModelChoiceFilter(label=gettext_lazy('Performer'), queryset=User.objects.all())
+    labels = ModelChoiceFilter(label=gettext_lazy('Labels'), queryset=Label.objects.all())
     current_user_tasks = BooleanFilter(
-        label=gettext_lazy('Only my tasks'),
         widget=CheckboxInput(),
         method='filter_current_user',
-        field_name='current_user_tasks'
+        label=gettext_lazy('Only my tasks')
     )
 
     def filter_current_user(self, queryset, field_name, box_is_checked):
@@ -36,8 +37,3 @@ class TasksFilter(FilterSet):
     class Meta:
         model = Task
         fields = ['status', 'executor', 'labels', 'current_user_tasks']
-        labels = {
-            'status': gettext_lazy('Status'),
-            'executor': gettext_lazy('Performer'),
-            'labels': gettext_lazy('Labels')
-        }

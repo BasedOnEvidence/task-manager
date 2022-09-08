@@ -28,9 +28,9 @@ class TasksFilter(FilterSet):
         label=gettext_lazy('Only my tasks')
     )
 
-    def filter_current_user(self, queryset, field_name, box_is_checked):
+    def filter_current_user(self, queryset, field_name, value):
         current_user = self.request.user
-        if not current_user.is_anonymous and box_is_checked:
+        if value:
             return queryset.filter(author=current_user)
         return queryset
 

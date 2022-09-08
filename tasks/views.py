@@ -5,20 +5,20 @@ from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
 
 from django_filters.views import FilterView
 
-from task_manager.mixins import LoginAndAccessPermissionMixin, LoginPermissionMixin
+from task_manager.mixins import AccessRequiredMixin, AuthRequiredMixin
 from tasks.forms import TaskForm, TasksFilter
 from tasks.models import Task
 from users.models import User
 
 
-class TasksListView(LoginPermissionMixin, FilterView):
+class TasksListView(AuthRequiredMixin, FilterView):
     model = Task
     template_name = 'tasks/list.html'
     context_object_name = 'tasks'
     filterset_class = TasksFilter
 
 
-class TaskCreateView(LoginPermissionMixin, SuccessMessageMixin, CreateView):
+class TaskCreateView(AuthRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/create.html'
@@ -30,7 +30,7 @@ class TaskCreateView(LoginPermissionMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
+class TaskUpdateView(AuthRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/update.html'
@@ -38,18 +38,14 @@ class TaskUpdateView(LoginPermissionMixin, SuccessMessageMixin, UpdateView):
     success_message = gettext_lazy('Task successfully updated')
 
 
-class TaskDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
+class TaskDeleteView(AuthRequiredMixin, AccessRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = reverse_lazy('tasks')
     success_message = gettext_lazy('Task successfully deleted')
-    error_url = reverse_lazy('users')
     error_message = gettext_lazy('You have no access to delete this task')
 
-    def test_func(self):
-        return self.request.user.pk == self.get_object().author.pk
 
-
-class TaskView(LoginPermissionMixin, DetailView):
+class TaskView(AuthRequiredMixin, DetailView):
     model = Task
     template_name = 'tasks/view.html'

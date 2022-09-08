@@ -2,11 +2,12 @@ from django.utils.translation import gettext_lazy, gettext
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
-from task_manager.mixins import LoginAndAccessPermissionMixin
-from users.forms import RegistrationForm, LoginForm
+from task_manager.mixins import AuthRequiredMixin, AccessRequiredMixin
+from users.forms import RegistrationForm
 from users.models import User
 
 
@@ -27,8 +28,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
 
 
 class UserLoginView(SuccessMessageMixin, LoginView):
-    model = User
-    form_class = LoginForm
+    form_class = AuthenticationForm
     template_name = 'users/login.html'
     success_url = reverse_lazy('home')
     success_message = gettext_lazy('You have successfully logged in')
@@ -44,26 +44,18 @@ class UserLogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class UserUpdateView(LoginAndAccessPermissionMixin, SuccessMessageMixin, UpdateView):
+class UserUpdateView(AuthRequiredMixin, AccessRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'users/update.html'
     model = User
     form_class = RegistrationForm
     success_url = reverse_lazy('users')
     success_message = gettext_lazy('You have successfully updated profile')
-    error_url = reverse_lazy('users')
     error_message = gettext_lazy('You have no access to edit this profile')
 
-    def test_func(self):
-        return self.request.user.pk == self.get_object().pk
 
-
-class UserDeleteView(LoginAndAccessPermissionMixin, SuccessMessageMixin, DeleteView):
+class UserDeleteView(AuthRequiredMixin, AccessRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = 'users/delete.html'
     model = User
     success_url = reverse_lazy('users')
     success_message = gettext_lazy('Profile have been deleted')
-    error_url = reverse_lazy('users')
     error_message = gettext_lazy('You have no access to delete this profile')
-
-    def test_func(self):
-        return self.request.user.pk == self.get_object().pk

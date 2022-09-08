@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-27 14:33+0300\n"
+"POT-Creation-Date: 2022-09-08 15:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
 #: templates/labels/list.html:13 templates/statuses/list.html:13
-#: templates/tasks/list.html:21
+#: templates/tasks/list.html:21 users/forms.py:16
 msgid "Name"
 msgstr "Имя"
 
@@ -50,7 +50,7 @@ msgstr "Статус успешно изменён"
 msgid "Status successfully deleted"
 msgstr "Статус успешно удалён"
 
-#: task_manager/mixins.py:13
+#: task_manager/mixins.py:16
 msgid "You need to log in to view this page"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
@@ -92,7 +92,7 @@ msgstr "Задача успешно изменена"
 msgid "Task successfully deleted"
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:47
+#: tasks/views.py:46
 msgid "You have no access to delete this task"
 msgstr "У вас нет прав для удаления задачи"
 
@@ -303,31 +303,35 @@ msgstr "Удалить аккаунт"
 msgid "Update"
 msgstr "Изменить"
 
-#: users/views.py:24
+#: users/forms.py:17
+msgid "Last name"
+msgstr "Фамилия"
+
+#: users/views.py:26
 msgid ""
 "Registration successfuly completed. Use your username and password to login"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:32
+#: users/views.py:34
 msgid "You have successfully logged in"
 msgstr "Вы залогинены"
 
-#: users/views.py:41
+#: users/views.py:43
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
 
-#: users/views.py:50
+#: users/views.py:52
 msgid "You have successfully updated profile"
 msgstr "Пользователь успешно изменён"
 
-#: users/views.py:52
+#: users/views.py:53
 msgid "You have no access to edit this profile"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: users/views.py:62
+#: users/views.py:60
 msgid "Profile have been deleted"
 msgstr "Пользователь успешно удалён"
 
-#: users/views.py:64
+#: users/views.py:61
 msgid "You have no access to delete this profile"
 msgstr "У вас нет прав для изменения другого пользователя."

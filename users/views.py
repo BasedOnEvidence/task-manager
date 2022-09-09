@@ -39,8 +39,7 @@ class UserLogoutView(LogoutView):
     success_url = reverse_lazy('home')
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            messages.info(request, gettext('You have successfully logged out'))
+        messages.info(request, gettext('You have successfully logged out'))
         return super().dispatch(request, *args, **kwargs)
 
 

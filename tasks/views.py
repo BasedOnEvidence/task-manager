@@ -8,7 +8,6 @@ from django_filters.views import FilterView
 from task_manager.mixins import AccessRequiredMixin, AuthRequiredMixin
 from tasks.forms import TaskForm, TasksFilter
 from tasks.models import Task
-from users.models import User
 
 
 class TasksListView(AuthRequiredMixin, FilterView):
@@ -26,7 +25,7 @@ class TaskCreateView(AuthRequiredMixin, SuccessMessageMixin, CreateView):
     success_message = gettext_lazy('Task successfully created')
 
     def form_valid(self, form):
-        form.instance.author = User.objects.get(id=self.request.user.pk)
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 

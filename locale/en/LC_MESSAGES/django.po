@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 15:37+0300\n"
+"POT-Creation-Date: 2022-09-09 14:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,32 +20,40 @@ msgstr ""
 
 #: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
 #: templates/labels/list.html:13 templates/statuses/list.html:13
-#: templates/tasks/list.html:21 users/forms.py:16
+#: templates/tasks/list.html:21 users/forms.py:9
 msgid "Name"
 msgstr "Name"
 
-#: labels/views.py:22
+#: labels/views.py:24
 msgid "Label successfully created"
 msgstr ""
 
-#: labels/views.py:30
+#: labels/views.py:32
 msgid "Label successfully updated"
 msgstr ""
 
-#: labels/views.py:37
+#: labels/views.py:39
 msgid "Label successfully deleted"
 msgstr ""
 
-#: statuses/views.py:22
+#: labels/views.py:45
+msgid "Unable to delete label because its in use"
+msgstr ""
+
+#: statuses/views.py:24
 msgid "Status successfully created"
 msgstr ""
 
-#: statuses/views.py:30
+#: statuses/views.py:32
 msgid "Status successfully updated"
 msgstr ""
 
-#: statuses/views.py:37
+#: statuses/views.py:39
 msgid "Status successfully deleted"
+msgstr ""
+
+#: statuses/views.py:45
+msgid "Unable to delete status because its in use"
 msgstr ""
 
 #: task_manager/mixins.py:16
@@ -78,19 +86,19 @@ msgstr ""
 msgid "Only my tasks"
 msgstr ""
 
-#: tasks/views.py:26
+#: tasks/views.py:25
 msgid "Task successfully created"
 msgstr ""
 
-#: tasks/views.py:38
+#: tasks/views.py:37
 msgid "Task successfully updated"
 msgstr ""
 
-#: tasks/views.py:45
+#: tasks/views.py:44
 msgid "Task successfully deleted"
 msgstr ""
 
-#: tasks/views.py:46
+#: tasks/views.py:45
 msgid "You have no access to delete this task"
 msgstr ""
 
@@ -323,7 +331,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: users/forms.py:17
+#: users/forms.py:10
 #, fuzzy
 #| msgid "Last login"
 msgid "Last name"
@@ -338,23 +346,23 @@ msgstr ""
 msgid "You have successfully logged in"
 msgstr ""
 
-#: users/views.py:43
+#: users/views.py:42
 msgid "You have successfully logged out"
 msgstr ""
 
-#: users/views.py:52
+#: users/views.py:51
 msgid "You have successfully updated profile"
 msgstr ""
 
-#: users/views.py:53
+#: users/views.py:52
 msgid "You have no access to edit this profile"
 msgstr ""
 
-#: users/views.py:60
+#: users/views.py:59
 msgid "Profile have been deleted"
 msgstr ""
 
-#: users/views.py:61
+#: users/views.py:60
 msgid "You have no access to delete this profile"
 msgstr ""
 

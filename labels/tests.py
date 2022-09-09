@@ -35,7 +35,7 @@ class LabelTests(TestCase):
 
     def test_delete_label(self):
         self.client.force_login(self.user)
-        response = self.client.post(reverse('delete_label', kwargs={'pk': 1}))
+        response = self.client.post(reverse('delete_label', kwargs={'pk': 4}))
         self.assertEqual(response.status_code, 302)
         with self.assertRaises(Label.DoesNotExist):
-            Label.objects.get(pk=1)
+            Label.objects.get(pk=4)

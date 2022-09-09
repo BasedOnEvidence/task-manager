@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 15:37+0300\n"
+"POT-Creation-Date: 2022-09-09 14:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,33 +22,41 @@ msgstr ""
 
 #: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
 #: templates/labels/list.html:13 templates/statuses/list.html:13
-#: templates/tasks/list.html:21 users/forms.py:16
+#: templates/tasks/list.html:21 users/forms.py:9
 msgid "Name"
 msgstr "Имя"
 
-#: labels/views.py:22
+#: labels/views.py:24
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
 
-#: labels/views.py:30
+#: labels/views.py:32
 msgid "Label successfully updated"
 msgstr "Метка успешно изменена"
 
-#: labels/views.py:37
+#: labels/views.py:39
 msgid "Label successfully deleted"
 msgstr "Метка успешно удалена"
 
-#: statuses/views.py:22
+#: labels/views.py:45
+msgid "Unable to delete label because its in use"
+msgstr "Невозможно удалить метку, потому что она используется"
+
+#: statuses/views.py:24
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
-#: statuses/views.py:30
+#: statuses/views.py:32
 msgid "Status successfully updated"
 msgstr "Статус успешно изменён"
 
-#: statuses/views.py:37
+#: statuses/views.py:39
 msgid "Status successfully deleted"
 msgstr "Статус успешно удалён"
+
+#: statuses/views.py:45
+msgid "Unable to delete status because its in use"
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: task_manager/mixins.py:16
 msgid "You need to log in to view this page"
@@ -80,19 +88,19 @@ msgstr "Метка"
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 
-#: tasks/views.py:26
+#: tasks/views.py:25
 msgid "Task successfully created"
 msgstr "Задача успешно создана"
 
-#: tasks/views.py:38
+#: tasks/views.py:37
 msgid "Task successfully updated"
 msgstr "Задача успешно изменена"
 
-#: tasks/views.py:45
+#: tasks/views.py:44
 msgid "Task successfully deleted"
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:46
+#: tasks/views.py:45
 msgid "You have no access to delete this task"
 msgstr "У вас нет прав для удаления задачи"
 
@@ -303,7 +311,7 @@ msgstr "Удалить аккаунт"
 msgid "Update"
 msgstr "Изменить"
 
-#: users/forms.py:17
+#: users/forms.py:10
 msgid "Last name"
 msgstr "Фамилия"
 
@@ -316,22 +324,22 @@ msgstr "Пользователь успешно зарегистрирован"
 msgid "You have successfully logged in"
 msgstr "Вы залогинены"
 
-#: users/views.py:43
+#: users/views.py:42
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
 
-#: users/views.py:52
+#: users/views.py:51
 msgid "You have successfully updated profile"
 msgstr "Пользователь успешно изменён"
 
-#: users/views.py:53
+#: users/views.py:52
 msgid "You have no access to edit this profile"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: users/views.py:60
+#: users/views.py:59
 msgid "Profile have been deleted"
 msgstr "Пользователь успешно удалён"
 
-#: users/views.py:61
+#: users/views.py:60
 msgid "You have no access to delete this profile"
 msgstr "У вас нет прав для изменения другого пользователя."

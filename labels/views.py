@@ -1,7 +1,9 @@
-from django.utils.translation import gettext_lazy
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy
 
 from task_manager.mixins import AuthRequiredMixin
 from labels.models import Label
@@ -35,3 +37,12 @@ class LabelDeleteView(AuthRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = 'labels/delete.html'
     success_url = reverse_lazy('labels')
     success_message = gettext_lazy('Label successfully deleted')
+
+    def form_valid(self, form):
+        label = self.get_object()
+        if label.tagged_tasks.all():
+            messages.error(self.request, gettext_lazy(
+                'Unable to delete label because its in use'
+            ))
+            return redirect(self.success_url)
+        return super().form_valid(form)

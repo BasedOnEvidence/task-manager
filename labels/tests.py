@@ -9,7 +9,9 @@ from labels.models import Label
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 ]})
 class LabelTests(TestCase):
-    fixtures = ['users.json', 'statuses.json', 'labels.json', 'tasks.json', 'task_labels_relations.json']
+    fixtures = [
+        'users.json', 'statuses.json', 'labels.json', 'tasks.json', 'task_labels_relations.json'
+    ]
 
     def setUp(self) -> None:
         self.user = User.objects.get(pk=1)

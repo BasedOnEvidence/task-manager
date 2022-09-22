@@ -51,5 +51,12 @@ class UserTests(TestCase):
         self.client.force_login(self.test_user)
         response = self.client.post(reverse('delete_user', kwargs={'pk': self.test_user.pk}))
         self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/users/')
         with self.assertRaises(User.DoesNotExist):
             User.objects.get(pk=self.test_user.pk)
+
+    def test_delete_user_by_anonymous_user(self):
+        response = self.client.post(reverse('delete_user', kwargs={'pk': 1}))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/login/')
+        self.assertTrue(User.objects.filter(pk=1).exists())

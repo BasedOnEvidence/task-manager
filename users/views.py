@@ -6,7 +6,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
-from task_manager.mixins import AuthRequiredMixin, AccessRequiredMixin
+from task_manager.mixins import AuthRequiredMixin
+from users.mixins import AccessRequiredMixin
 from users.forms import RegistrationForm
 from users.models import User
 

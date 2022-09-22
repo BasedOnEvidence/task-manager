@@ -22,6 +22,8 @@ jobs:
         run: make create_env
       - name: install dependency
         run: make install
+      - name: lint check
+        run: make lint
       - name: code coverage
         uses: paambaati/codeclimate-action@v2.7.5
         env:

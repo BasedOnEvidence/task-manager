@@ -5,7 +5,8 @@ from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
 
 from django_filters.views import FilterView
 
-from task_manager.mixins import AccessRequiredMixin, AuthRequiredMixin
+from task_manager.mixins import AuthRequiredMixin
+from tasks.mixins import AccessRequiredMixin
 from tasks.forms import TaskForm, TasksFilter
 from tasks.models import Task
 

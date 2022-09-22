@@ -30,5 +30,13 @@
         "name": "Canceled",
         "creation_date": "2022-08-13T11:34:36.725Z"
     }
+},
+{
+    "model": "statuses.status",
+    "pk": 11,
+    "fields": {
+        "name": "12334",
+        "creation_date": "2022-08-21T21:47:37.053Z"
+    }
 }
 ]

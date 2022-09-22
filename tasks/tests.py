@@ -55,7 +55,7 @@ class TaskTests(TestCase):
         response = self.client.post(reverse('update_task', kwargs={'pk': 1}), data={
             'name': 'Test update task',
             'description': 'Text update description',
-            'executor': 3,
+            'executor': 1,
             'status': 2,
             'labels': [2, 3]
         })
@@ -64,7 +64,7 @@ class TaskTests(TestCase):
         self.assertEqual(changed_task.name, 'Test update task')
         self.assertEqual(changed_task.description, 'Text update description')
         self.assertEqual(changed_task.author.pk, 1)
-        self.assertEqual(changed_task.executor.pk, 3)
+        self.assertEqual(changed_task.executor.pk, 1)
         self.assertEqual(changed_task.status.pk, 2)
         self.assertEqual(changed_task.labels.all()[0].pk, 2)
         self.assertEqual(changed_task.labels.all()[1].pk, 3)

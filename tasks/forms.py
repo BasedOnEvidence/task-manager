@@ -24,11 +24,11 @@ class TasksFilter(FilterSet):
     labels = ModelChoiceFilter(label=gettext_lazy('Label'), queryset=Label.objects.all())
     current_user_tasks = BooleanFilter(
         widget=CheckboxInput(),
-        method='filter_current_user',
+        method='filter_task_author',
         label=gettext_lazy('Only my tasks')
     )
 
-    def filter_current_user(self, queryset, field_name, value):
+    def filter_task_author(self, queryset, field_name, value):
         current_user = self.request.user
         if value:
             return queryset.filter(author=current_user)

@@ -9,7 +9,7 @@ from labels.models import Label
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 ]})
 class LabelTests(TestCase):
-    fixtures = ['users.json', 'statuses.json', 'labels.json', 'tasks.json']
+    fixtures = ['users.json', 'statuses.json', 'labels.json', 'tasks.json', 'task_labels_relations.json']
 
     def setUp(self) -> None:
         self.user = User.objects.get(pk=1)
@@ -52,7 +52,7 @@ class LabelTests(TestCase):
 
     def test_delete_label_with_tasks(self):
         self.client.force_login(self.user)
-        response = self.client.post(reverse('delete_label', kwargs={'pk': 1}))
-        self.assertTrue(Label.objects.filter(pk=1).exists())
+        response = self.client.post(reverse('delete_label', kwargs={'pk': 2}))
+        self.assertTrue(Label.objects.filter(pk=2).exists())
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/labels/')

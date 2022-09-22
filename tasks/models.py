@@ -12,7 +12,18 @@ class Task(models.Model):
     status = models.ForeignKey(Status, on_delete=models.PROTECT, related_name='status_tasks')
     description = models.TextField(blank=True)
     creation_date = models.DateTimeField(auto_now_add=True)
-    labels = models.ManyToManyField(Label, related_name='tagged_tasks', blank=True)
+    labels = models.ManyToManyField(
+        Label,
+        related_name='tagged_tasks',
+        blank=True,
+        through='TaskLabelsRelations',
+        through_fields=('task', 'label'),
+    )
 
     def __str__(self):
         return self.name
+
+
+class TaskLabelsRelations(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.DO_NOTHING)
+    label = models.ForeignKey(Label, on_delete=models.PROTECT)

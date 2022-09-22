@@ -1,13 +1,10 @@
-from django.test import TestCase, modify_settings
+from django.test import TestCase
 from django.urls import reverse
 
 from users.models import User
 from labels.models import Label
 
 
-@modify_settings(MIDDLEWARE={'remove': [
-    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
-]})
 class LabelTests(TestCase):
     fixtures = [
         'users.json', 'statuses.json', 'labels.json', 'tasks.json', 'task_labels_relations.json'

@@ -29,9 +29,8 @@ class TasksFilter(FilterSet):
     )
 
     def filter_task_author(self, queryset, field_name, value):
-        current_user = self.request.user
         if value:
-            return queryset.filter(author=current_user)
+            return queryset.filter(author=self.request.user)
         return queryset
 
     class Meta:

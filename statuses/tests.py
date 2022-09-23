@@ -5,12 +5,16 @@ from statuses.models import Status
 from users.models import User
 
 
+STATUS_WITH_TASKS_ID = 2
+
+
 class UserTests(TestCase):
     fixtures = ['users.json', 'statuses.json', 'tasks.json', 'labels.json']
 
     def setUp(self) -> None:
-        self.user = User.objects.get(pk=1)
-        self.status = Status.objects.get(pk=1)
+        self.user = User.objects.first()
+        self.status = Status.objects.first()
+        self.busy_status = Status.objects.get(pk=STATUS_WITH_TASKS_ID)
         self.client.force_login(self.user)
 
     def test_list_statuses(self):
@@ -49,7 +53,7 @@ class UserTests(TestCase):
 
     def test_delete_status_with_tasks(self):
         self.client.force_login(self.user)
-        response = self.client.post(reverse('delete_status', kwargs={'pk': 2}))
-        self.assertTrue(Status.objects.filter(pk=2).exists())
+        response = self.client.post(reverse('delete_status', kwargs={'pk': self.busy_status.pk}))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/statuses/')
+        self.assertTrue(Status.objects.filter(pk=self.busy_status.pk).exists())

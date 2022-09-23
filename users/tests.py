@@ -8,7 +8,7 @@ class UserTests(TestCase):
     fixtures = ['users.json']
 
     def setUp(self) -> None:
-        self.test_user = User.objects.get(pk=1)
+        self.test_user = User.objects.first()
 
     def test_signup_page(self):
         response = self.client.get(reverse('create_user'))
@@ -84,7 +84,7 @@ class UserTests(TestCase):
             User.objects.get(pk=self.test_user.pk)
 
     def test_delete_user_by_anonymous_user(self):
-        response = self.client.post(reverse('delete_user', kwargs={'pk': 1}))
+        response = self.client.post(reverse('delete_user', kwargs={'pk': self.test_user.pk}))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/login/')
-        self.assertTrue(User.objects.filter(pk=1).exists())
+        self.assertTrue(User.objects.filter(pk=self.test_user.pk).exists())

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-09 14:50+0300\n"
+"POT-Creation-Date: 2022-09-27 15:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,87 +20,87 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/forms.py:12 statuses/forms.py:12 tasks/forms.py:13
+#: labels/models.py:6 statuses/models.py:6 tasks/models.py:10
 #: templates/labels/list.html:13 templates/statuses/list.html:13
 #: templates/tasks/list.html:21 users/forms.py:9
 msgid "Name"
 msgstr "Имя"
 
-#: labels/views.py:24
+#: labels/views.py:22
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
 
-#: labels/views.py:32
+#: labels/views.py:30
 msgid "Label successfully updated"
 msgstr "Метка успешно изменена"
 
-#: labels/views.py:39
+#: labels/views.py:37
 msgid "Label successfully deleted"
 msgstr "Метка успешно удалена"
 
-#: labels/views.py:45
+#: labels/views.py:38
 msgid "Unable to delete label because its in use"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: statuses/views.py:24
+#: statuses/views.py:22
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
-#: statuses/views.py:32
+#: statuses/views.py:30
 msgid "Status successfully updated"
 msgstr "Статус успешно изменён"
 
-#: statuses/views.py:39
+#: statuses/views.py:37
 msgid "Status successfully deleted"
 msgstr "Статус успешно удалён"
 
-#: statuses/views.py:45
+#: statuses/views.py:38
 msgid "Unable to delete status because its in use"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/mixins.py:16
+#: task_manager/mixins.py:12
 msgid "You need to log in to view this page"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: tasks/forms.py:14 tasks/forms.py:22 templates/tasks/list.html:22
+#: tasks/forms.py:15 tasks/models.py:21 templates/tasks/list.html:22
 #: templates/tasks/view.html:26
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/forms.py:15 tasks/forms.py:23 templates/tasks/list.html:24
+#: tasks/forms.py:16 tasks/models.py:16 templates/tasks/list.html:24
 #: templates/tasks/view.html:22
 msgid "Performer"
 msgstr "Исполнитель"
 
-#: tasks/forms.py:16
-msgid "Description"
-msgstr "Описание"
-
-#: tasks/forms.py:17 templates/labels/list.html:7 templates/tasks/view.html:35
-msgid "Labels"
-msgstr "Метки"
-
-#: tasks/forms.py:24
+#: tasks/forms.py:17
 msgid "Label"
 msgstr "Метка"
 
-#: tasks/forms.py:28
+#: tasks/forms.py:21
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 
-#: tasks/views.py:25
+#: tasks/models.py:23
+msgid "Description"
+msgstr "Описание"
+
+#: tasks/models.py:30 templates/labels/list.html:7 templates/tasks/view.html:35
+msgid "Labels"
+msgstr "Метки"
+
+#: tasks/views.py:26
 msgid "Task successfully created"
 msgstr "Задача успешно создана"
 
-#: tasks/views.py:37
+#: tasks/views.py:38
 msgid "Task successfully updated"
 msgstr "Задача успешно изменена"
 
-#: tasks/views.py:44
+#: tasks/views.py:45
 msgid "Task successfully deleted"
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:45
+#: tasks/views.py:46
 msgid "You have no access to delete this task"
 msgstr "У вас нет прав для удаления задачи"
 
@@ -117,36 +117,48 @@ msgid "header_users"
 msgstr "Пользователи"
 
 #: templates/base.html:36
-msgid "Control"
-msgstr "Админка"
-
-#: templates/base.html:37
 msgid "header_labels"
 msgstr "Метки"
 
-#: templates/base.html:38
+#: templates/base.html:37
 msgid "header_tasks"
 msgstr "Задачи"
 
-#: templates/base.html:39
+#: templates/base.html:38
 msgid "header_statuses"
 msgstr "Статусы"
 
-#: templates/base.html:40
+#: templates/base.html:39
 msgid "header_profile"
 msgstr "Профиль"
 
-#: templates/base.html:45
+#: templates/base.html:44
 msgid "header_logout"
 msgstr "Выход"
 
-#: templates/base.html:47
+#: templates/base.html:46
 msgid "header_login"
 msgstr "Вход"
 
-#: templates/base.html:48
+#: templates/base.html:47
 msgid "header_register"
 msgstr "Регистрация"
+
+#: templates/home.html:7
+msgid "Менеджер задач"
+msgstr ""
+
+#: templates/home.html:10
+msgid "Hello from Hexlet!"
+msgstr "Привет от Хекслета!"
+
+#: templates/home.html:11
+msgid "Programming courses"
+msgstr "Курсы по программированию"
+
+#: templates/home.html:12
+msgid "Learn more"
+msgstr "Узнать больше"
 
 #: templates/labels/create.html:11 templates/labels/list.html:8
 msgid "Create label"
@@ -315,31 +327,34 @@ msgstr "Изменить"
 msgid "Last name"
 msgstr "Фамилия"
 
-#: users/views.py:26
+#: users/views.py:27
 msgid ""
 "Registration successfuly completed. Use your username and password to login"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:34
+#: users/views.py:35
 msgid "You have successfully logged in"
 msgstr "Вы залогинены"
 
-#: users/views.py:42
+#: users/views.py:43
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
 
-#: users/views.py:51
+#: users/views.py:52
 msgid "You have successfully updated profile"
 msgstr "Пользователь успешно изменён"
 
-#: users/views.py:52
+#: users/views.py:53
 msgid "You have no access to edit this profile"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: users/views.py:59
+#: users/views.py:60
 msgid "Profile have been deleted"
 msgstr "Пользователь успешно удалён"
 
-#: users/views.py:60
+#: users/views.py:61
 msgid "You have no access to delete this profile"
 msgstr "У вас нет прав для изменения другого пользователя."
+
+#~ msgid "Control"
+#~ msgstr "Админка"

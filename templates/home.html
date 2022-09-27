@@ -4,7 +4,12 @@
 
 
 {% block content %}
-<h1>Credentials</h1>
-<h4>test</h4>
-<h4>Qwerty!@</h4>
+<title>{% trans 'Менеджер задач' %}</title>
+<div class="card mt-5">
+    <div class="card-body p-5 bg-light">
+        <h1 class="display-4">{% trans 'Hello from Hexlet!' %}</h1>
+        <p class="lead pb-4 mb-5 border-bottom">{% trans 'Programming courses' %}</p>
+        <a href="https://ru.hexlet.io" class="btn btn-primary btn-lg">{% trans 'Learn more' %}</a>
+    </div>
+</div>
 {% endblock %}

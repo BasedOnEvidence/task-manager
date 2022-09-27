@@ -14,7 +14,7 @@ class AuthRequiredMixin(AccessMixin):
         return super().dispatch(request, *args, **kwargs)
 
 
-class StillInUseMixin():
+class ProtectedDeleteMixin():
 
     def form_valid(self, form):
         try:

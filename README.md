@@ -1,13 +1,13 @@
 # Simple django task manager demo
-[![Actions Status](https://github.com/BasedOnEvidence/python-project-lvl4/workflows/build/badge.svg)](https://github.com/BasedOnEvidence/python-project-lvl4/actions)
+[![Actions Status](https://github.com/BasedOnEvidence/task-manager/workflows/build/badge.svg)](https://github.com/BasedOnEvidence/task-manager/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ac5612e7a335e9f9108/maintainability)](https://codeclimate.com/github/BasedOnEvidence/python-project-lvl4/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9ac5612e7a335e9f9108/test_coverage)](https://codeclimate.com/github/BasedOnEvidence/python-project-lvl4/test_coverage)
 
 
 ## Demostration
-You can find project demo <a href="https://task-manager-template.herokuapp.com/" target="_blank">here</a>.
-Username: test
-Password: Qwerty!@
+You can find project demo <a href="https://task-manager-template.herokuapp.com/" target="_blank">here</a>. <br>
+Username: test <br>
+Password: Qwerty!@ <br>
 Or <a href="https://task-manager-template.herokuapp.com/users/create/" target="_blank">register</a> your own account!
 
 ## Build
